@@ -1,0 +1,17 @@
+[21:18:14] [INFO] Loaded 2 symbols from DB
+[21:18:14] [INFO] Ожидание авторизации
+[21:18:25] [INFO] Авторизация успешна {"uid": "3de9995d-2d73-404b-9a0a-795113c3e475"}
+[21:18:30] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[21:18:31] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[21:18:32] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[21:19:14] [WARNING] Bybit connection failed: Retryable error occurred, retrying...
+[21:19:28] [INFO] Bybit connected successfully
+[21:20:29] [INFO] Loaded 2 symbols from DB
+[21:20:30] [INFO] Авто-авторизация успешна
+[21:20:31] [INFO] Bybit connected successfully
+[21:20:36] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[21:20:38] [INFO] Trade opened and saved {"trade_id": 24}
+[21:20:38] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[21:20:40] [INFO] Trade opened and saved {"trade_id": 25}
+[21:20:40] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[21:20:42] [INFO] Trade opened and saved {"trade_id": 26}

@@ -1,0 +1,4 @@
+PRIMARY = "#1f2937"
+SUCCESS = "#10b981"
+WARN = "#f59e0b"
+ERROR = "#ef4444"

@@ -1,0 +1,180 @@
+[12:59:46] [INFO] Loaded 2 symbols from DB
+[12:59:46] [INFO] Авто-авторизация успешна
+[12:59:48] [ERROR] Token refresh error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/terminal/init (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD914E5010>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[12:59:48] [INFO] Обновление цен по Bybit {"symbols": 2}
+[12:59:52] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD914F9310>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[12:59:54] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD914F9810>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[12:59:56] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90C92780>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[12:59:57] [INFO] Обновление цен по Bybit {"symbols": 2}
+[12:59:59] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90C928B0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:01] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90C95FD0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:03] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CA99D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:03] [INFO] Обновление цен по Bybit {"symbols": 2}
+[13:00:05] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CA9F20>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:08] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CAA250>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:10] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CAA580>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:10] [INFO] Обновление цен по Bybit {"symbols": 2}
+[13:00:12] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CAA7A0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:14] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CAA470>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:16] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CAA140>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:17] [INFO] Обновление цен по Bybit {"symbols": 2}
+[13:00:19] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CA9F20>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:21] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CA96A0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:23] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CA9AE0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:23] [INFO] Обновление цен по Bybit {"symbols": 2}
+[13:00:25] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CA9480>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:00:28] [ERROR] Poll status error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CD90CA9150>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:04:56] [INFO] Loaded 2 symbols from DB
+[13:04:56] [INFO] Авто-авторизация успешна
+[13:04:58] [ERROR] Token refresh error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/terminal/init (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000288D295CEC0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[13:04:58] [INFO] Обновление цен по Bybit {"symbols": 2}
+[13:05:06] [INFO] Обновление цен по Bybit {"symbols": 2}
+[13:05:13] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:56:26] [INFO] Loaded 2 symbols from DB
+[17:56:26] [INFO] Авто-авторизация успешна
+[17:56:28] [ERROR] Token refresh error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/terminal/init (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001A3A3814EC0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[17:56:28] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:56:37] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:56:43] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:56:47] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:56:52] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:56:58] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:03] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:08] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:13] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:18] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:23] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:28] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:33] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:38] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:43] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:48] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:53] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:57:58] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:03] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:08] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:13] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:18] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:23] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:28] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:33] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:38] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:43] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:49] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:54] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:58:59] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:04] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:07] [INFO] Loaded 2 symbols from DB
+[17:59:07] [INFO] Авто-авторизация успешна
+[17:59:08] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:13] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:18] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:24] [ERROR] API polling error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022825780E20>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[17:59:26] [ERROR] API polling error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000228257809E0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[17:59:26] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:28] [ERROR] API polling error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022825780F30>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[17:59:30] [ERROR] API polling error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022825781040>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[17:59:33] [ERROR] API polling error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022825781260>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[17:59:33] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:35] [ERROR] API polling error {"error": "HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/data/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022825781480>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))"}
+[17:59:37] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:42] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:47] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:52] [INFO] Обновление цен по Bybit {"symbols": 2}
+[17:59:57] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:02] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:07] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:13] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:18] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:23] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:28] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:33] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:38] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:43] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:48] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:53] [INFO] Loaded 2 symbols from DB
+[18:00:53] [INFO] Авто-авторизация успешна
+[18:00:54] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:00:59] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:04] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:09] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:14] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:19] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:24] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:29] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:34] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:39] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:44] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:50] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:01:57] [INFO] Loaded 2 symbols from DB
+[18:01:57] [INFO] Авто-авторизация успешна
+[18:01:57] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:03] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:07] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:12] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:17] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:22] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:28] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:33] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:38] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:43] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:48] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:53] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:02:58] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:03] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:08] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:13] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:18] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:24] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:29] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:34] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:39] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:44] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:49] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:54] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:03:59] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:04:04] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:04:09] [INFO] Обновление цен по Bybit {"symbols": 2}
+[18:04:26] [INFO] Loaded 2 symbols from DB
+[18:04:26] [INFO] Авто-авторизация успешна
+[18:12:05] [INFO] Loaded 2 symbols from DB
+[18:12:05] [INFO] Авто-авторизация успешна
+[18:12:05] [WARNING] Bybit connection failed
+[18:12:08] [WARNING] Bybit connection failed
+[18:12:10] [WARNING] Bybit connection failed
+[18:12:13] [WARNING] Bybit connection failed
+[18:13:16] [INFO] Loaded 2 symbols from DB
+[18:13:16] [INFO] Авто-авторизация успешна
+[18:13:16] [WARNING] Bybit connection failed
+[18:13:22] [WARNING] Bybit connection failed
+[18:13:36] [WARNING] Bybit connection failed
+[18:13:55] [WARNING] Bybit connection failed
+[18:15:54] [INFO] Loaded 2 symbols from DB
+[18:15:54] [INFO] Авто-авторизация успешна
+[18:15:54] [WARNING] Bybit connection failed
+[18:15:57] [WARNING] Bybit connection failed
+[18:16:00] [WARNING] Bybit connection failed
+[18:17:12] [INFO] Loaded 2 symbols from DB
+[18:17:12] [INFO] Авто-авторизация успешна
+[18:17:12] [WARNING] Bybit connection failed: Session not initialized
+[18:17:17] [WARNING] Bybit connection failed: Session not initialized
+[18:17:23] [WARNING] Bybit connection failed: Session not initialized
+[18:17:29] [WARNING] Bybit connection failed: Session not initialized
+[18:17:32] [WARNING] Bybit connection failed: Session not initialized
+[18:18:37] [INFO] Loaded 2 symbols from DB
+[18:18:38] [INFO] Авто-авторизация успешна
+[18:18:38] [WARNING] Bybit connection failed: Session not initialized
+[18:18:41] [WARNING] Bybit connection failed: Session not initialized
+[18:19:16] [INFO] Loaded 2 symbols from DB
+[18:19:16] [INFO] Авто-авторизация успешна
+[18:19:16] [WARNING] Bybit connection failed: Session not initialized
+[18:19:19] [WARNING] Bybit connection failed: Session not initialized
+[18:20:26] [INFO] Loaded 2 symbols from DB
+[18:20:26] [INFO] Авто-авторизация успешна
+[18:20:26] [WARNING] Bybit connection failed: Session not initialized
+[18:20:30] [WARNING] Bybit connection failed: Session not initialized
+[18:20:34] [WARNING] Bybit connection failed: Session not initialized
+[18:21:32] [INFO] Loaded 2 symbols from DB
+[18:21:32] [INFO] Авто-авторизация успешна
+[18:21:32] [WARNING] Bybit connection failed: Session not initialized
+[18:21:35] [WARNING] Bybit connection failed: Session not initialized

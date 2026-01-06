@@ -1,0 +1,34 @@
+{
+  "api_url": "https://terminalx.laravel.cloud",
+  "pairs": {
+    "BTCUSDT": {
+      "id": 1,
+      "symbol": "BTCUSDT",
+      "price": "87753.100000000000000000",
+      "status": true,
+      "min_order_qty": "0.00100000",
+      "qty_step": "0.00100000",
+      "min_notional_value": "5.00",
+      "synced_at": "2026-01-01 09:10:01"
+    },
+    "ETHUSDT": {
+      "id": 2,
+      "symbol": "ETHUSDT",
+      "price": "2983.290000000000000000",
+      "status": true,
+      "min_order_qty": "0.01000000",
+      "qty_step": "0.01000000",
+      "min_notional_value": "5.00",
+      "synced_at": "2026-01-01 09:10:01"
+    }
+  },
+  "uid": "3de9995d-2d73-404b-9a0a-795113c3e475",
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidWlkIjoiM2RlOTk5NWQtMmQ3My00MDRiLTlhMGEtNzk1MTEzYzNlNDc1IiwiYmFsIjoiMC4wMDAwMDAwMDAwMDAwMDAwMDAiLCJleHBfYXQiOiIyMDI2LTAyLTA1IDAzOjQzOjI4IiwiYWN0IjoxLCJpcCI6Ijg0LjIyNS43MC4xNTgiLCJpYXQiOjE3Njc3MjcxMDUsImV4cCI6MTc2NzcyODkwNX0.JmqgXVcwXO2SzcaFHiAbQFZtvMHwSSP7_UQToELkXuo",
+  "bybit_api_key": {
+    "enc": "gAAAAABpXWA_VUAJkjISCK41f9EBaUbMwmpsmoATuMSMekk88DSDB8O7sQHl_vNaW9vLVklnMEowjsnPWFD9kBYx0EgUQNjUmARr0vl6KkruSSQdb74c6vI="
+  },
+  "bybit_api_secret": {
+    "enc": "gAAAAABpXWA_pk-ZLyqVd2NE6Ph2v5FVv4-ny4ZETT0dccAg2riTIu3-U8RjfkwihfkskceDgwDJFPmr_LjKsebivq2S2OF2i2G-HFpBsAJMmlzQRfT9VxL_IaMSGgHdguGrt8kDotFx"
+  },
+  "trading_balance": 40.0
+}
