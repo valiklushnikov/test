@@ -27,7 +27,7 @@ class OrderService:
 
         try:
             self.open_orders = self.bybit.get_open_orders(symbol)
-            print(f"DEBUG OrderService: Received {len(self.open_orders)} open orders")
+
             self.logger.debug(f"Загружено ордеров: {len(self.open_orders)}",
                               {"symbol": symbol or "all"})
         except Exception as e:
@@ -48,7 +48,7 @@ class OrderService:
 
         try:
             self.order_history = self.bybit.get_order_history(symbol, limit)
-            print(f"DEBUG OrderService: Received {len(self.order_history)} filled orders")
+            # print(f"DEBUG OrderService: Received {len(self.order_history)} filled orders")
             self.logger.debug(f"Загружено исполненных ордеров: {len(self.order_history)}",
                               {"symbol": symbol or "all"})
         except Exception as e:

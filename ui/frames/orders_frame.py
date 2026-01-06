@@ -10,7 +10,7 @@ class OrdersFrame(ttk.Frame):
         self.app = app
 
         # Создаем Treeview
-        columns = ("time", "symbol", "side", "type", "qty", "price", "status")
+        columns = ("id", "time", "symbol", "side", "type", "qty", "price", "status")
         self.tree = ttk.Treeview(
             self,
             columns=columns,
@@ -20,6 +20,7 @@ class OrdersFrame(ttk.Frame):
 
         # Настройка заголовков
         headers = {
+            "id": "ID",
             "time": "Время",
             "symbol": "Символ",
             "side": "Сторона",
@@ -33,13 +34,14 @@ class OrdersFrame(ttk.Frame):
             self.tree.heading(col, text=header)
 
         # Настройка ширины колонок
-        self.tree.column("time", width=80, anchor="w", stretch=True)
-        self.tree.column("symbol", width=80, anchor="w", stretch=True)
+        self.tree.column("id", width=100, anchor="w", stretch=True)
+        self.tree.column("time", width=80, anchor="center", stretch=True)
+        self.tree.column("symbol", width=70, anchor="center", stretch=True)
         self.tree.column("side", width=50, anchor="center", stretch=True)
-        self.tree.column("type", width=60, anchor="center", stretch=True)
-        self.tree.column("qty", width=80, anchor="e", stretch=True)
-        self.tree.column("price", width=90, anchor="e", stretch=True)
-        self.tree.column("status", width=70, anchor="center", stretch=True)
+        self.tree.column("type", width=50, anchor="center", stretch=True)
+        self.tree.column("qty", width=70, anchor="e", stretch=True)
+        self.tree.column("price", width=80, anchor="e", stretch=True)
+        self.tree.column("status", width=60, anchor="center", stretch=True)
 
         # Вертикальный скроллбар
         vs = ttk.Scrollbar(self, orient="vertical", command=self.tree.yview)
@@ -55,48 +57,33 @@ class OrdersFrame(ttk.Frame):
         self.tree.tag_configure("cancelled", foreground="red")
 
     def update(self, orders: list):
-        """
-        Обновить список ордеров
-
-        Args:
-            orders: Список ордеров от Bybit API (открытые + история)
-        """
-        print(f"DEBUG OrdersFrame: Updating with {len(orders)} orders")
-
-        # Получаем существующие записи
-        existing = {self.tree.item(i, "values")[0]: i for i in self.tree.get_children() if self.tree.item(i, "values")}
-
+        existing_ids = set(self.tree.get_children())
         processed_ids = set()
 
         for order in orders:
-            order_id = order.get("orderId", "")
+            order_id = order.get("orderId")
             if not order_id:
                 continue
 
-            # Извлекаем данные
             symbol = order.get("symbol", "")
             side = order.get("side", "")
             order_type = order.get("orderType", "")
             qty = float(order.get("qty", 0))
 
-            # Цена исполнения для filled orders
-            avg_price = float(order.get("avgPrice", 0))
-            order_price = float(order.get("price", 0)) if order.get("price") else 0
+            avg_price = float(order.get("avgPrice") or 0)
+            order_price = float(order.get("price") or 0)
             display_price = avg_price if avg_price > 0 else order_price
 
             status = order.get("orderStatus", "")
 
-            # Время создания/обновления
-            timestamp = int(order.get("updatedTime", order.get("createdTime", 0)))
-            if timestamp > 0:
-                time_str = datetime.fromtimestamp(timestamp / 1000).strftime("%H:%M:%S")
-            else:
-                time_str = "-"
+            timestamp = int(order.get("updatedTime") or order.get("createdTime") or 0)
+            time_str = (
+                datetime.fromtimestamp(timestamp / 1000).strftime("%H:%M:%S")
+                if timestamp else "-"
+            )
 
-            print(f"DEBUG OrdersFrame: Processing order {order_id}: {symbol} {side} {status}")
-
-            # Форматируем значения
             values = (
+                order_id[:18],
                 time_str,
                 symbol,
                 side,
@@ -106,7 +93,6 @@ class OrdersFrame(ttk.Frame):
                 status
             )
 
-            # Определяем тэг для раскраски
             tag = ""
             if status == "Filled":
                 tag = "filled"
@@ -115,19 +101,20 @@ class OrdersFrame(ttk.Frame):
             elif status == "Cancelled":
                 tag = "cancelled"
 
-            # Обновляем или создаем запись
-            if order_id in existing:
-                self.tree.item(existing[order_id], values=values, tags=(tag,))
+            if order_id in existing_ids:
+                self.tree.item(order_id, values=values, tags=(tag,))
             else:
-                self.tree.insert("", 0, iid=order_id, values=values, tags=(tag,))  # Вставляем в начало
+                self.tree.insert("", 0, iid=order_id, values=values, tags=(tag,))
 
             processed_ids.add(order_id)
 
-        # Удаляем ордера, которых больше нет (оставляем только последние 50)
-        all_items = self.tree.get_children()
-        if len(all_items) > 50:
-            for item in all_items[50:]:
-                self.tree.delete(item)
+        # удаляем устаревшие
+        for iid in existing_ids - processed_ids:
+            self.tree.delete(iid)
+
+        # лимит 50 строк
+        for iid in self.tree.get_children()[50:]:
+            self.tree.delete(iid)
 
     def clear(self):
         """Очистить все ордера"""

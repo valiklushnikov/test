@@ -75,14 +75,14 @@ class BybitAPI:
             else:
                 res = self.session.get_open_orders(category="linear", settleCoin="USDT")
 
-            print(f"DEBUG: Bybit API response: {res}")  # ← Отладка
+            # print(f"DEBUG: Bybit API response: {res}")  # ← Отладка
 
             items = res.get("result", {}).get("list", []) if isinstance(res, dict) else []
-            print(f"DEBUG: Extracted {len(items)} orders from response")  # ← Отладка
+            # print(f"DEBUG: Extracted {len(items)} orders from response")  # ← Отладка
 
             # Выводим детали каждого ордера
-            for i, order in enumerate(items):
-                print(f"DEBUG: Order {i}: {order.get('symbol')} {order.get('orderId')} {order.get('orderStatus')}")
+            # for i, order in enumerate(items):
+            #     print(f"DEBUG: Order {i}: {order.get('symbol')} {order.get('orderId')} {order.get('orderStatus')}")
 
             return items
         except Exception as e:
@@ -114,10 +114,10 @@ class BybitAPI:
 
             res = self.session.get_order_history(**params)
 
-            print(f"DEBUG: Order history response: {res}")
+            # print(f"DEBUG: Order history response: {res}")
 
             items = res.get("result", {}).get("list", []) if isinstance(res, dict) else []
-            print(f"DEBUG: Extracted {len(items)} filled orders from history")
+            # print(f"DEBUG: Extracted {len(items)} filled orders from history")
 
             return items
         except Exception as e:
@@ -132,14 +132,14 @@ class BybitAPI:
             if price is not None:
                 params["price"] = str(price)
 
-            print(f"DEBUG: Placing order with params: {params}")  # ← Отладка
+            # print(f"DEBUG: Placing order with params: {params}")  # ← Отладка
 
             res = self.session.place_order(**params)
 
-            print(f"DEBUG: Place order response: {res}")  # ← Отладка
+            # print(f"DEBUG: Place order response: {res}")  # ← Отладка
 
             order_id = str(res.get("result", {}).get("orderId", ""))
-            print(f"DEBUG: Order placed with ID: {order_id}")  # ← Отладка
+            # print(f"DEBUG: Order placed with ID: {order_id}")  # ← Отладка
 
             return order_id
         except Exception as e:

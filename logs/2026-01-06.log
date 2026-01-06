@@ -291,3 +291,489 @@
 [22:48:25] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
 [22:48:28] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
 [22:48:29] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:06:11] [INFO] Loaded 2 symbols from DB
+[23:06:11] [INFO] Авто-авторизация успешна
+[23:06:13] [INFO] Bybit connected successfully
+[23:06:13] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:06:19] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[23:06:20] [INFO] Trade opened and saved {"trade_id": 55}
+[23:06:20] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[23:06:22] [INFO] Trade opened and saved {"trade_id": 56}
+[23:06:22] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[23:06:24] [INFO] Trade opened and saved {"trade_id": 57}
+[23:06:24] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[23:06:26] [INFO] Trade opened and saved {"trade_id": 58}
+[23:06:28] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:06:29] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:06:30] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:06:30] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:11:46] [INFO] Loaded 2 symbols from DB
+[23:11:46] [INFO] Авто-авторизация успешна
+[23:11:47] [INFO] Bybit connected successfully
+[23:11:47] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:11:52] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[23:11:54] [INFO] Trade opened and saved {"trade_id": 59}
+[23:11:54] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[23:11:56] [INFO] Trade opened and saved {"trade_id": 60}
+[23:11:56] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[23:11:58] [INFO] Trade opened and saved {"trade_id": 61}
+[23:11:58] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[23:12:00] [INFO] Trade opened and saved {"trade_id": 62}
+[23:12:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:12:02] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:14:57] [INFO] Loaded 2 symbols from DB
+[23:14:57] [INFO] Авто-авторизация успешна
+[23:14:58] [INFO] Bybit connected successfully
+[23:14:59] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:15:04] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[23:15:06] [INFO] Trade opened and saved {"trade_id": 63}
+[23:15:06] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[23:15:08] [INFO] Trade opened and saved {"trade_id": 64}
+[23:15:08] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[23:15:09] [INFO] Trade opened and saved {"trade_id": 65}
+[23:15:09] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[23:15:11] [INFO] Trade opened and saved {"trade_id": 66}
+[23:15:13] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:15:13] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:15:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:15:16] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:18:57] [INFO] Loaded 2 symbols from DB
+[23:18:57] [INFO] Авто-авторизация успешна
+[23:18:58] [INFO] Bybit connected successfully
+[23:18:59] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:19:04] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[23:19:05] [INFO] Trade opened and saved {"trade_id": 67}
+[23:19:05] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[23:19:07] [INFO] Trade opened and saved {"trade_id": 68}
+[23:19:07] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[23:19:09] [INFO] Trade opened and saved {"trade_id": 69}
+[23:19:09] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[23:19:11] [INFO] Trade opened and saved {"trade_id": 70}
+[23:19:13] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:19:13] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:19:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:19:16] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:23:36] [INFO] Loaded 2 symbols from DB
+[23:23:36] [INFO] Авто-авторизация успешна
+[23:23:37] [INFO] Bybit connected successfully
+[23:23:38] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:23:43] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[23:23:44] [INFO] Trade opened and saved {"trade_id": 71}
+[23:23:44] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[23:23:46] [INFO] Trade opened and saved {"trade_id": 72}
+[23:23:46] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[23:23:48] [INFO] Trade opened and saved {"trade_id": 73}
+[23:23:48] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[23:23:50] [INFO] Trade opened and saved {"trade_id": 74}
+[23:23:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:23:52] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:23:55] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:23:55] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:23:58] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:23:58] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:03] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:07] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:11] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:11] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:15] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:15] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:19] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:20] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:24] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:24] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:29] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:29] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:33] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:33] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:36] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:37] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:39] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[23:24:41] [INFO] Trade opened and saved {"trade_id": 75}
+[23:24:43] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:24:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:43] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:46] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:46] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:49] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:50] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:54] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:24:58] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:24:59] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:25:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:25:03] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:25:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:25:07] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:25:10] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:25:11] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:29:58] [INFO] Loaded 2 symbols from DB
+[23:29:58] [INFO] Авто-авторизация успешна
+[23:30:00] [INFO] Bybit connected successfully
+[23:30:00] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:30:05] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[23:30:07] [INFO] Trade opened and saved {"trade_id": 76}
+[23:30:07] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[23:30:09] [INFO] Trade opened and saved {"trade_id": 77}
+[23:30:09] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[23:30:10] [INFO] Trade opened and saved {"trade_id": 78}
+[23:30:10] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[23:30:12] [INFO] Trade opened and saved {"trade_id": 79}
+[23:30:12] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[23:30:14] [INFO] Trade opened and saved {"trade_id": 80}
+[23:30:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:16] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:30:18] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:18] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:30:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:23] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:30:26] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:27] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:30:31] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:31] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:30:35] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:35] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:30:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:40] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:30:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:44] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:30:47] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:48] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:30:52] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:53] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:30:56] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:30:56] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:33:27] [INFO] Loaded 2 symbols from DB
+[23:33:27] [INFO] Авто-авторизация успешна
+[23:33:29] [INFO] Bybit connected successfully
+[23:33:29] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:33:34] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[23:33:36] [INFO] Trade opened and saved {"trade_id": 81}
+[23:33:36] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[23:33:37] [INFO] Trade opened and saved {"trade_id": 82}
+[23:33:37] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[23:33:39] [INFO] Trade opened and saved {"trade_id": 83}
+[23:33:39] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[23:33:40] [INFO] Trade opened and saved {"trade_id": 84}
+[23:33:40] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[23:33:42] [INFO] Trade opened and saved {"trade_id": 85}
+[23:33:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:33:44] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:33:46] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:33:47] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:33:50] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:33:51] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:33:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:33:55] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:33:59] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:00] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:04] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:05] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:09] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:09] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:13] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:14] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:17] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:17] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:21] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:22] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:26] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:27] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:30] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:30] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:31] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:34:35] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:36] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:40] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:41] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:45] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:46] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:50] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:50] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:54] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:34:58] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:34:58] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:02] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:07] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:07] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:12] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:12] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:15] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:16] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:19] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:20] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:24] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:24] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:28] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:29] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:32] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:35:34] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:34] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:36] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:37] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:41] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:41] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:45] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:46] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:49] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:50] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:55] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:35:58] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:35:58] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:36:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:36:02] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:36:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:36:06] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:36:10] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:36:10] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:36:15] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:36:15] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:36:18] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:36:19] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:36:23] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:36:23] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:36:27] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:36:27] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:36:31] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:36:31] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:36:32] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:36:36] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:36:36] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:36:43] [INFO] Loaded 2 symbols from DB
+[23:36:43] [INFO] Авто-авторизация успешна
+[23:36:43] [ERROR] Unhandled exception {"error": "Invalid column index id"}
+[23:37:04] [INFO] Loaded 2 symbols from DB
+[23:37:04] [INFO] Авто-авторизация успешна
+[23:37:05] [INFO] Bybit connected successfully
+[23:37:06] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:37:11] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[23:37:13] [INFO] Trade opened and saved {"trade_id": 86}
+[23:37:13] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[23:37:14] [INFO] Trade opened and saved {"trade_id": 87}
+[23:37:14] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[23:37:16] [INFO] Trade opened and saved {"trade_id": 88}
+[23:37:16] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[23:37:18] [INFO] Trade opened and saved {"trade_id": 89}
+[23:37:18] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[23:37:19] [INFO] Trade opened and saved {"trade_id": 90}
+[23:37:21] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:37:22] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:37:24] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:37:25] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:37:29] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:37:33] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:37:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:37:52] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:37:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:37:55] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:37:57] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:37:58] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:02] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:06] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:08] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:38:10] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:11] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:16] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:18] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:19] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:23] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:27] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:28] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:31] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:32] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:35] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:36] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:40] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:44] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:48] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:48] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:53] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:54] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:38:56] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:38:57] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:39:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:39:17] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:39:19] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:39:19] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:39:20] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:39:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:39:23] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:39:26] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:39:26] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:39:30] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:39:31] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:39:35] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:39:35] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:39:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:39:40] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:39:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:39:43] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:39:48] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:39:48] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:39:51] [INFO] Loaded 2 symbols from DB
+[23:39:51] [INFO] Авто-авторизация успешна
+[23:39:52] [INFO] Bybit connected successfully
+[23:39:53] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:39:57] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[23:39:59] [INFO] Trade opened and saved {"trade_id": 91}
+[23:39:59] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[23:40:01] [INFO] Trade opened and saved {"trade_id": 92}
+[23:40:01] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[23:40:02] [INFO] Trade opened and saved {"trade_id": 93}
+[23:40:02] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[23:40:04] [INFO] Trade opened and saved {"trade_id": 94}
+[23:40:04] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[23:40:05] [INFO] Trade opened and saved {"trade_id": 95}
+[23:40:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:40:07] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:40:10] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:40:11] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:40:13] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:40:14] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:40:18] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:40:18] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:40:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:40:22] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:40:26] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:40:27] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:40:30] [INFO] Loaded 2 symbols from DB
+[23:40:30] [INFO] Авто-авторизация успешна
+[23:40:31] [INFO] Bybit connected successfully
+[23:40:32] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:40:36] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[23:40:38] [INFO] Trade opened and saved {"trade_id": 96}
+[23:40:38] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[23:40:40] [INFO] Trade opened and saved {"trade_id": 97}
+[23:40:40] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[23:40:41] [INFO] Trade opened and saved {"trade_id": 98}
+[23:40:41] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[23:40:43] [INFO] Trade opened and saved {"trade_id": 99}
+[23:40:43] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[23:40:44] [INFO] Trade opened and saved {"trade_id": 100}
+[23:40:46] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:40:46] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:40:49] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:40:49] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:40:53] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:40:53] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:40:57] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:40:57] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:02] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:06] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:09] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:10] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:14] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:14] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:18] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:18] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:23] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:26] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:27] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:31] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:31] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:34] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:41:35] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:35] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:39] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:43] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:47] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:47] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:52] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:52] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:41:57] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:41:57] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:00] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:00] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:04] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:05] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:08] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:09] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:13] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:13] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:18] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:18] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:22] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:26] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:26] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:30] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:31] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:34] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:42:35] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:35] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:40] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:44] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:44] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:47] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:48] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:51] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:42:55] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:42:56] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:00] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:00] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:05] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:05] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:09] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:09] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:14] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:14] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:17] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:18] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:23] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:27] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:27] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:30] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:31] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:34] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:43:36] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:36] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:39] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:43] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:49] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:49] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:52] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:43:55] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:43:56] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:00] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:44:00] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:04] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:44:04] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:08] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:44:09] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:12] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:44:12] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:44:16] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:20] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:44:21] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:24] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:44:25] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:30] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:44:30] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:33] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:44:33] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:35] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[23:44:37] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[23:44:37] [DEBUG] Загружено исполненных ордеров: 20 {"symbol": "all"}
+[23:44:41] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}

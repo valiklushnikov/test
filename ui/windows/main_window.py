@@ -33,7 +33,7 @@ class MainWindow:
         root.rowconfigure(1, weight=1)
         root.columnconfigure(0, weight=1)
 
-        # Колонка 1: Цены (узкая)
+        # ===== Левая колонка: Цены =====
         left = ttk.Frame(paned)
         left.rowconfigure(0, weight=1)
         left.columnconfigure(0, weight=1)
@@ -41,34 +41,42 @@ class MainWindow:
         self.prices = PricesFrame(left, app)
         self.prices.grid(row=0, column=0, sticky="nsew")
 
-        # Колонка 2: Позиции (средняя)
-        middle = ttk.Frame(paned)
-        middle.rowconfigure(0, weight=1)
-        middle.columnconfigure(0, weight=1)
-
-        ttk.Label(middle, text="Позиции", font=("Segoe UI", 10, "bold")).grid(
-            row=0, column=0, sticky="w", padx=4, pady=2
-        )
-        self.positions = PositionsFrame(middle, app)
-        self.positions.grid(row=1, column=0, sticky="nsew")
-        middle.rowconfigure(1, weight=1)
-
-        # Колонка 3: Ордера (средняя)
-        right = ttk.Frame(paned)
-        right.rowconfigure(0, weight=1)
-        right.columnconfigure(0, weight=1)
-
-        ttk.Label(right, text="Ордера (открытые и исполненные)", font=("Segoe UI", 10, "bold")).grid(
-            row=0, column=0, sticky="w", padx=4, pady=2
-        )
-        self.orders = OrdersFrame(right, app)
-        self.orders.grid(row=1, column=0, sticky="nsew")
-        right.rowconfigure(1, weight=1)
-
-        # Добавляем панели с весами (1:2:2)
         paned.add(left, weight=1)
-        paned.add(middle, weight=2)
-        paned.add(right, weight=2)
+
+        # ===== Центральная колонка: Notebook =====
+        center = ttk.Frame(paned)
+        center.rowconfigure(0, weight=1)
+        center.columnconfigure(0, weight=1)
+
+        notebook = ttk.Notebook(center)
+        notebook.grid(row=0, column=0, sticky="nsew")
+
+        # --- Вкладка 1: Позиции ---
+        positions_tab = ttk.Frame(notebook)
+        positions_tab.rowconfigure(0, weight=1)
+        positions_tab.columnconfigure(0, weight=1)
+
+        self.positions = PositionsFrame(positions_tab, app)
+        self.positions.grid(row=0, column=0, sticky="nsew")
+
+        notebook.add(positions_tab, text="Позиции")
+
+        # --- Вкладка 2: Ордера ---
+        orders_tab = ttk.Frame(notebook)
+        orders_tab.rowconfigure(0, weight=1)
+        orders_tab.columnconfigure(0, weight=1)
+
+        self.orders = OrdersFrame(orders_tab, app)
+        self.orders.grid(row=0, column=0, sticky="nsew")
+
+        notebook.add(orders_tab, text="Ордера")
+
+        paned.add(center, weight=3)
+
+        # # Добавляем панели с весами (1:2:2)
+        # paned.add(left, weight=1)
+        # paned.add(middle, weight=2)
+        # paned.add(right, weight=2)
 
         # === Лог внизу ===
         self.log = LogFrame(root, app)
