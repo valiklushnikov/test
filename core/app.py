@@ -5,11 +5,12 @@ from services.position_service import PositionService
 from services.order_service import OrderService
 from services.sync_service import SyncService
 from utils.helpers import timestamp_ms
+from utils.async_executor import AsyncExecutor
 from api.bybit_api import BybitAPI
 from config import (
     PRICE_UPDATE_INTERVAL,
     BALANCE_UPDATE_INTERVAL,
-    ORDERS_UPDATE_INTERVAL,  # ← Импортируем новую константу
+    ORDERS_UPDATE_INTERVAL,
     POLLING_INTERVAL,
     TOKEN_REFRESH_INTERVAL
 )
@@ -24,6 +25,9 @@ class App:
         self.logger = logger
         self.db = db
 
+        # Async executor для параллельных операций
+        self.executor = AsyncExecutor(max_workers=10)
+
         # Инициализация репозиториев
         from database.repositories.symbol_repository import SymbolRepository
         self.symbol_repo = SymbolRepository(db)
@@ -32,7 +36,7 @@ class App:
         self.price_service = PriceService(logger)
         self.balance_service = BalanceService(logger)
         self.position_service = PositionService(logger)
-        self.order_service = OrderService(logger)  # ← Новый сервис
+        self.order_service = OrderService(logger)
         self.sync_service = SyncService(logger)
 
         # Bybit API
@@ -40,7 +44,7 @@ class App:
         self.price_service.set_bybit(self.bybit)
         self.balance_service.set_bybit(self.bybit)
         self.position_service.set_bybit(self.bybit)
-        self.order_service.set_bybit(self.bybit)  # ← Подключаем API
+        self.order_service.set_bybit(self.bybit)
 
         # Загружаем символы из БД
         self._load_symbols_from_db()
@@ -76,6 +80,7 @@ class App:
 
     def stop(self):
         self.scheduler.stop()
+        self.executor.shutdown()
         self.started = False
         self.events.emit("on_disconnected", {"ts": timestamp_ms()})
 
@@ -100,11 +105,8 @@ class App:
                 self.sync_service.process_commands(commands, self)
                 self.events.emit("on_command_received", {"count": len(commands)})
         except Exception as e:
-            # Always emit failure status and log error
             self.connected_api = False
             self.events.emit("on_api_status", {"status": False})
-
-            # Simplified error logging
             error_str = str(e)
             if "WinError 10061" in error_str or "Connection refused" in error_str:
                 self.logger.error("Сервер API недоступен")
@@ -120,14 +122,19 @@ class App:
             self.events.emit("on_error", {"error": str(e)})
 
     def _update_balance(self):
+        """Обновление баланса и позиций (параллельно)"""
         try:
-            # Обновляем баланс
-            self.balance_service.fetch_wallet_balance()
-            tb = float(self.settings.get("trading_balance", "0"))
-            self.balance_service.set_trading_balance(tb)
+            # Параллельное выполнение трёх операций
+            tasks = {
+                'balance': lambda: self.balance_service.fetch_wallet_balance(),
+                'positions': lambda: self.position_service.fetch_positions(),
+                'trading_balance': lambda: self.balance_service.set_trading_balance(
+                    float(self.settings.get("trading_balance", "0"))
+                )
+            }
 
-            # Обновляем только позиции (ордера обновляются отдельно)
-            self.position_service.fetch_positions()
+            # Выполняем параллельно
+            self.executor.run_parallel(tasks)
 
             # Эмитим события
             self.events.emit("on_positions_updated", self.position_service.positions)
@@ -140,11 +147,9 @@ class App:
             self.events.emit("on_error", {"error": str(e)})
 
     def _update_orders(self):
-        """Обновление открытых ордеров (отдельная задача, каждые 4 сек)"""
+        """Обновление открытых ордеров (оптимизированная версия)"""
         try:
-            # Получаем и открытые, и недавно исполненные
-            self.order_service.fetch_open_orders()
-            self.order_service.fetch_order_history(limit=20)
+            self.order_service.fetch_all_orders_parallel()
 
             # Отправляем объединенный список
             all_orders = self.order_service.get_all_orders_combined()
@@ -198,7 +203,19 @@ class App:
 
         if self.connected_bybit:
             self.logger.info("Bybit connected successfully")
-            self._update_balance()
-            self._update_prices()
+            # Параллельная первая загрузка данных
+            self._initial_data_load()
         else:
             self.logger.warning(f"Bybit connection failed: {self.bybit.last_error}")
+
+    def _initial_data_load(self):
+        """Параллельная загрузка всех данных при подключении"""
+        try:
+            tasks = {
+                'balance': lambda: self._update_balance(),
+                'prices': lambda: self._update_prices(),
+                'orders': lambda: self._update_orders()
+            }
+            self.executor.run_parallel(tasks)
+        except Exception as e:
+            self.logger.error("Initial data load error", {"error": str(e)})

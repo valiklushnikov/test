@@ -1,5 +1,6 @@
 from typing import Dict, List
 import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 class BybitAPI:
@@ -8,16 +9,16 @@ class BybitAPI:
         self.api_secret = api_secret
         self.session = None
         self.last_error = None
+        self._executor = ThreadPoolExecutor(max_workers=5)
 
     def connect(self):
         try:
             from pybit.unified_trading import HTTP
-            # Use testnet=False explicitly to ensure mainnet
             self.session = HTTP(
                 testnet=True,
                 api_key=self.api_key,
                 api_secret=self.api_secret,
-                recv_window=10000,  # Increase recv_window to avoid timestamp errors
+                recv_window=10000,
             )
         except Exception as e:
             self.session = None
@@ -29,12 +30,9 @@ class BybitAPI:
             self.last_error = "Session not initialized"
             return False
         try:
-            # Force a request that requires authentication and correct permissions
-            # get_api_key_information works for V5
             self.session.get_api_key_information()
             return True
         except Exception as e:
-            # Store the exact error from the library
             self.last_error = str(e)
             return False
 
@@ -43,7 +41,6 @@ class BybitAPI:
             return 0.0
         try:
             data = self.session.get_wallet_balance(accountType="UNIFIED")
-            # Simplified extraction
             if isinstance(data, dict):
                 list_data = data.get("result", {}).get("list", [])
                 if list_data:
@@ -65,39 +62,23 @@ class BybitAPI:
             return []
 
     def get_open_orders(self, symbol: str | None = None) -> List[Dict]:
+        """ОПТИМИЗИРОВАНО: Быстрая загрузка открытых ордеров"""
         if not self.session:
-            print("DEBUG: Session not initialized")
             return []
         try:
-            # Если символ не указан, получаем все ордера по USDT
             if symbol:
                 res = self.session.get_open_orders(category="linear", symbol=symbol)
             else:
                 res = self.session.get_open_orders(category="linear", settleCoin="USDT")
 
-            # print(f"DEBUG: Bybit API response: {res}")  # ← Отладка
-
             items = res.get("result", {}).get("list", []) if isinstance(res, dict) else []
-            # print(f"DEBUG: Extracted {len(items)} orders from response")  # ← Отладка
-
-            # Выводим детали каждого ордера
-            # for i, order in enumerate(items):
-            #     print(f"DEBUG: Order {i}: {order.get('symbol')} {order.get('orderId')} {order.get('orderStatus')}")
-
             return items
         except Exception as e:
-            # Логируем ошибку для отладки
             print(f"DEBUG: Exception in get_open_orders: {e}")
             return []
 
     def get_order_history(self, symbol: str | None = None, limit: int = 50) -> List[Dict]:
-        """
-        Получить историю ордеров (включая исполненные)
-
-        Args:
-            symbol: Символ для фильтрации
-            limit: Количество записей (макс 50)
-        """
+        """ОПТИМИЗИРОВАНО: Быстрая загрузка истории ордеров"""
         if not self.session:
             return []
         try:
@@ -113,16 +94,35 @@ class BybitAPI:
                 params["settleCoin"] = "USDT"
 
             res = self.session.get_order_history(**params)
-
-            # print(f"DEBUG: Order history response: {res}")
-
             items = res.get("result", {}).get("list", []) if isinstance(res, dict) else []
-            # print(f"DEBUG: Extracted {len(items)} filled orders from history")
-
             return items
         except Exception as e:
             print(f"DEBUG: Exception in get_order_history: {e}")
             return []
+
+    def get_orders_parallel(self) -> tuple:
+        """
+        НОВЫЙ МЕТОД: Параллельная загрузка открытых и исполненных ордеров
+
+        Returns:
+            (open_orders, filled_orders)
+        """
+        if not self.session:
+            return [], []
+
+        try:
+            # Запускаем два запроса параллельно
+            future_open = self._executor.submit(self.get_open_orders)
+            future_history = self._executor.submit(self.get_order_history, limit=20)
+
+            # Ждём результаты
+            open_orders = future_open.result(timeout=5)
+            filled_orders = future_history.result(timeout=5)
+
+            return open_orders, filled_orders
+        except Exception as e:
+            print(f"DEBUG: Exception in get_orders_parallel: {e}")
+            return [], []
 
     def place_order(self, symbol: str, side: str, qty: float, order_type: str, price: float | None = None) -> str:
         if not self.session:
@@ -132,18 +132,11 @@ class BybitAPI:
             if price is not None:
                 params["price"] = str(price)
 
-            # print(f"DEBUG: Placing order with params: {params}")  # ← Отладка
-
             res = self.session.place_order(**params)
-
-            # print(f"DEBUG: Place order response: {res}")  # ← Отладка
-
             order_id = str(res.get("result", {}).get("orderId", ""))
-            # print(f"DEBUG: Order placed with ID: {order_id}")  # ← Отладка
-
             return order_id
         except Exception as e:
-            print(f"DEBUG: Exception placing order: {e}")  # ← Отладка
+            print(f"DEBUG: Exception placing order: {e}")
             return ""
 
     def place_conditional_order(self, symbol: str, side: str, qty: float, order_type: str, trigger_price: float,
@@ -179,7 +172,7 @@ class BybitAPI:
             return False
 
     def get_ticker(self, symbol: str) -> Dict:
-        # Use session if available, otherwise fallback to public requests
+        """ОПТИМИЗИРОВАНО: Кэширование сессии"""
         if self.session:
             try:
                 res = self.session.get_tickers(category="linear", symbol=symbol)
@@ -187,12 +180,13 @@ class BybitAPI:
                 price = float(items[0].get("lastPrice", 0.0)) if items else 0.0
                 return {"symbol": symbol, "price": price}
             except Exception:
-                # If session call fails, fall through to requests
                 pass
 
+        # Fallback на публичный API
         try:
-            r = requests.get("https://api.bybit.com/v5/market/tickers", params={"category": "linear", "symbol": symbol},
-                             timeout=5)
+            r = requests.get("https://api.bybit.com/v5/market/tickers",
+                             params={"category": "linear", "symbol": symbol},
+                             timeout=3)
             j = r.json() if r.content else {}
             items = j.get("result", {}).get("list", [])
             price = float(items[0].get("lastPrice", 0.0)) if items else 0.0
@@ -201,7 +195,46 @@ class BybitAPI:
             return {"symbol": symbol, "price": 0.0}
 
     def get_tickers(self, symbols: List[str]) -> Dict[str, float]:
+        """ОПТИМИЗИРОВАНО: Batch запрос вместо множественных"""
+        if not symbols:
+            return {}
+
+        # Если меньше 5 символов - batch запрос эффективнее
+        if len(symbols) <= 5 and self.session:
+            try:
+                # Один запрос для всех символов (без фильтра по symbol)
+                res = self.session.get_tickers(category="linear")
+                items = res.get("result", {}).get("list", [])
+
+                out = {}
+                symbol_set = set(symbols)
+                for item in items:
+                    sym = item.get("symbol")
+                    if sym in symbol_set:
+                        out[sym] = float(item.get("lastPrice", 0.0))
+
+                # Заполняем отсутствующие нулями
+                for s in symbols:
+                    if s not in out:
+                        out[s] = 0.0
+
+                return out
+            except Exception:
+                pass
+
+        # Fallback: параллельная загрузка для каждого символа
         out = {}
-        for s in symbols:
-            out[s] = self.get_ticker(s)["price"]
+        futures = {self._executor.submit(self.get_ticker, s): s for s in symbols}
+        for future in as_completed(futures):
+            try:
+                result = future.result(timeout=3)
+                out[result["symbol"]] = result["price"]
+            except Exception:
+                symbol = futures[future]
+                out[symbol] = 0.0
+
         return out
+
+    def shutdown(self):
+        """Закрытие executor"""
+        self._executor.shutdown(wait=False)

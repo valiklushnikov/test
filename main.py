@@ -57,3 +57,9 @@ if __name__ == "__main__":
         run()
     except Exception as e:
         logger.error("Unhandled exception", {"error": str(e)})
+    finally:
+        # Очистка ресурсов
+        try:
+            app.stop()
+        except:
+            pass
