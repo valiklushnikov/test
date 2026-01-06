@@ -1,11 +1,18 @@
-from typing import Dict, List
+from typing import Dict
 from services.price_service import PriceService
 from services.balance_service import BalanceService
 from services.position_service import PositionService
+from services.order_service import OrderService
 from services.sync_service import SyncService
 from utils.helpers import timestamp_ms
 from api.bybit_api import BybitAPI
-from config import PRICE_UPDATE_INTERVAL, BALANCE_UPDATE_INTERVAL, POLLING_INTERVAL, TOKEN_REFRESH_INTERVAL
+from config import (
+    PRICE_UPDATE_INTERVAL,
+    BALANCE_UPDATE_INTERVAL,
+    ORDERS_UPDATE_INTERVAL,  # ← Импортируем новую константу
+    POLLING_INTERVAL,
+    TOKEN_REFRESH_INTERVAL
+)
 
 
 class App:
@@ -16,21 +23,34 @@ class App:
         self.settings = settings
         self.logger = logger
         self.db = db
+
+        # Инициализация репозиториев
         from database.repositories.symbol_repository import SymbolRepository
         self.symbol_repo = SymbolRepository(db)
+
+        # Инициализация сервисов
         self.price_service = PriceService(logger)
         self.balance_service = BalanceService(logger)
         self.position_service = PositionService(logger)
+        self.order_service = OrderService(logger)  # ← Новый сервис
         self.sync_service = SyncService(logger)
+
+        # Bybit API
         self.bybit = BybitAPI("", "")
         self.price_service.set_bybit(self.bybit)
         self.balance_service.set_bybit(self.bybit)
         self.position_service.set_bybit(self.bybit)
+        self.order_service.set_bybit(self.bybit)  # ← Подключаем API
+
         # Загружаем символы из БД
         self._load_symbols_from_db()
+
+        # Статусы подключения
         self.connected_api = False
         self.connected_bybit = False
         self.started = False
+
+        # Trade Service
         from services.trade_service import TradeService
         self.trade_service = TradeService(self.bybit, logger)
 
@@ -65,6 +85,7 @@ class App:
         self.scheduler.add_task("poll_status", POLLING_INTERVAL, self._poll_status)
         self.scheduler.add_task("update_prices", PRICE_UPDATE_INTERVAL, self._update_prices)
         self.scheduler.add_task("update_balance", BALANCE_UPDATE_INTERVAL, self._update_balance)
+        self.scheduler.add_task("update_orders", ORDERS_UPDATE_INTERVAL, self._update_orders)
         self.scheduler.add_task("refresh_token", TOKEN_REFRESH_INTERVAL, self._refresh_token)
         self.scheduler.start()
 
@@ -79,16 +100,16 @@ class App:
                 self.sync_service.process_commands(commands, self)
                 self.events.emit("on_command_received", {"count": len(commands)})
         except Exception as e:
-            # Always emit failure status and log error to ensure UI reflects the issue
+            # Always emit failure status and log error
             self.connected_api = False
             self.events.emit("on_api_status", {"status": False})
-            
-            # Simplified error logging for connection issues
+
+            # Simplified error logging
             error_str = str(e)
             if "WinError 10061" in error_str or "Connection refused" in error_str:
-                 self.logger.error("Сервер API недоступен")
+                self.logger.error("Сервер API недоступен")
             else:
-                 self.logger.error("API polling error", {"error": error_str})
+                self.logger.error("API polling error", {"error": error_str})
 
     def _update_prices(self):
         try:
@@ -100,13 +121,15 @@ class App:
 
     def _update_balance(self):
         try:
+            # Обновляем баланс
             self.balance_service.fetch_wallet_balance()
-            # Reload trading balance from settings in case it changed
             tb = float(self.settings.get("trading_balance", "0"))
             self.balance_service.set_trading_balance(tb)
-            
+
+            # Обновляем только позиции (ордера обновляются отдельно)
             self.position_service.fetch_positions()
-            self.position_service.fetch_open_orders()
+
+            # Эмитим события
             self.events.emit("on_positions_updated", self.position_service.positions)
             self.events.emit("on_balance_updated", {
                 "wallet": self.balance_service.wallet_balance,
@@ -116,26 +139,34 @@ class App:
             self.logger.error("Update balance error", {"error": str(e)})
             self.events.emit("on_error", {"error": str(e)})
 
+    def _update_orders(self):
+        """Обновление открытых ордеров (отдельная задача, каждые 4 сек)"""
+        try:
+            # Получаем и открытые, и недавно исполненные
+            self.order_service.fetch_open_orders()
+            self.order_service.fetch_order_history(limit=20)
+
+            # Отправляем объединенный список
+            all_orders = self.order_service.get_all_orders_combined()
+            self.events.emit("on_orders_updated", all_orders)
+        except Exception as e:
+            self.logger.error("Update orders error", {"error": str(e)})
+            self.events.emit("on_error", {"error": str(e)})
+
     def _refresh_token(self):
         try:
             token = self.auth.refresh_token()
-            # Если получили пары при рефреше - сохраняем
             pairs = self.auth.get_pairs()
             if pairs:
-                 self.update_symbols(pairs)
+                self.update_symbols(pairs)
         except Exception as e:
             self.logger.error("Token refresh error", {"error": str(e)})
             self.events.emit("on_error", {"error": str(e)})
 
     def update_symbols(self, pairs: Dict[str, dict]):
-        """
-        Обновляет символы в БД и в сервисе цен.
-        pairs: dict с данными символов (ключ - тикер)
-        """
+        """Обновляет символы в БД и в сервисе цен"""
         try:
-            # Сохраняем в БД
             self.symbol_repo.save_symbols(pairs)
-            # Обновляем в памяти (только список активных)
             active_symbols = self.symbol_repo.get_active_symbols_data()
             self.price_service.update_symbols(active_symbols)
         except Exception as e:
@@ -144,8 +175,7 @@ class App:
     def configure_bybit(self):
         key = self.settings.get("bybit_api_key", "")
         secret = self.settings.get("bybit_api_secret", "")
-        
-        # If keys are missing, do not attempt to connect or overwrite with invalid instance
+
         if not key or not secret:
             self.connected_bybit = False
             self.events.emit("on_bybit_status", {"status": False})
@@ -154,20 +184,21 @@ class App:
         self.bybit = BybitAPI(key, secret)
         self.bybit.connect()
         self.connected_bybit = self.bybit.test_connection()
-        
-        # Emit status event
+
         self.events.emit("on_bybit_status", {"status": self.connected_bybit})
-        
+
+        # Обновляем ссылки на API во всех сервисах
         self.price_service.set_bybit(self.bybit)
         self.balance_service.set_bybit(self.bybit)
         self.position_service.set_bybit(self.bybit)
+        self.order_service.set_bybit(self.bybit)
+
         from services.trade_service import TradeService
         self.trade_service = TradeService(self.bybit, self.logger)
-        
+
         if self.connected_bybit:
             self.logger.info("Bybit connected successfully")
-            # Immediate update of balance and prices
             self._update_balance()
             self._update_prices()
         else:
-             self.logger.warning(f"Bybit connection failed: {self.bybit.last_error}")
+            self.logger.warning(f"Bybit connection failed: {self.bybit.last_error}")

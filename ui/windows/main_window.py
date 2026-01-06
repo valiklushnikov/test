@@ -3,6 +3,7 @@ from tkinter import ttk
 from ui.frames.status_frame import StatusFrame
 from ui.frames.prices_frame import PricesFrame
 from ui.frames.positions_frame import PositionsFrame
+from ui.frames.orders_frame import OrdersFrame
 from ui.frames.log_frame import LogFrame
 
 
@@ -10,51 +11,79 @@ class MainWindow:
     def __init__(self, root, app):
         self.root = root
         self.app = app
-        self._set_geometry(800, 500)
-        # Минимальный размер окна
-        root.minsize(800, 500)
-        
-        # Стиль
+        self._set_geometry(1000, 600)
+        root.minsize(1000, 600)
+
         self._setup_style()
-        # Верхняя строка статуса
+
+        # === Верхняя строка статуса ===
         top = ttk.Frame(root)
         top.grid(row=0, column=0, sticky="ew", padx=4, pady=2)
         top.columnconfigure(0, weight=1)
+
         self.status = StatusFrame(top, app)
         self.status.grid(row=0, column=0, sticky="w")
+
         btn = ttk.Button(top, text="Настройки", command=self.open_settings)
         btn.grid(row=0, column=1, sticky="e", padx=4)
-        # Основная панель
+
+        # === Основная панель (трехколоночная) ===
         paned = ttk.Panedwindow(root, orient="horizontal")
         paned.grid(row=1, column=0, sticky="nsew", padx=4, pady=2)
         root.rowconfigure(1, weight=1)
         root.columnconfigure(0, weight=1)
+
+        # Колонка 1: Цены (узкая)
         left = ttk.Frame(paned)
-        right = ttk.Frame(paned)
-        paned.add(left, weight=1)
-        paned.add(right, weight=3)
-        # Левая колонка цен
         left.rowconfigure(0, weight=1)
         left.columnconfigure(0, weight=1)
+
         self.prices = PricesFrame(left, app)
         self.prices.grid(row=0, column=0, sticky="nsew")
-        # Правая колонка позиций
+
+        # Колонка 2: Позиции (средняя)
+        middle = ttk.Frame(paned)
+        middle.rowconfigure(0, weight=1)
+        middle.columnconfigure(0, weight=1)
+
+        ttk.Label(middle, text="Позиции", font=("Segoe UI", 10, "bold")).grid(
+            row=0, column=0, sticky="w", padx=4, pady=2
+        )
+        self.positions = PositionsFrame(middle, app)
+        self.positions.grid(row=1, column=0, sticky="nsew")
+        middle.rowconfigure(1, weight=1)
+
+        # Колонка 3: Ордера (средняя)
+        right = ttk.Frame(paned)
         right.rowconfigure(0, weight=1)
         right.columnconfigure(0, weight=1)
-        self.positions = PositionsFrame(right, app)
-        self.positions.grid(row=0, column=0, sticky="nsew")
-        # Лог
+
+        ttk.Label(right, text="Ордера (открытые и исполненные)", font=("Segoe UI", 10, "bold")).grid(
+            row=0, column=0, sticky="w", padx=4, pady=2
+        )
+        self.orders = OrdersFrame(right, app)
+        self.orders.grid(row=1, column=0, sticky="nsew")
+        right.rowconfigure(1, weight=1)
+
+        # Добавляем панели с весами (1:2:2)
+        paned.add(left, weight=1)
+        paned.add(middle, weight=2)
+        paned.add(right, weight=2)
+
+        # === Лог внизу ===
         self.log = LogFrame(root, app)
         self.log.grid(row=2, column=0, sticky="ew", padx=4, pady=2)
         root.rowconfigure(2, weight=0)
-        # События
+
+        # === Подписываемся на события ===
         self.app.events.subscribe("on_price_updated", self._on_price_updated)
         self.app.events.subscribe("on_balance_updated", self._on_balance_updated)
         self.app.events.subscribe("on_positions_updated", self._on_positions_updated)
+        self.app.events.subscribe("on_orders_updated", self._on_orders_updated)  # ← Новое
         self.app.events.subscribe("on_api_status", self._on_api_status)
         self.app.events.subscribe("on_bybit_status", self._on_bybit_status)
 
-        # Инициализация сервисов и старт (ПОСЛЕ создания UI и подписок)
+        # Инициализация сервисов и старт
         self.app.configure_bybit()
         self.app.start()
 
@@ -68,10 +97,17 @@ class MainWindow:
         self.prices.update_prices(data)
 
     def _on_balance_updated(self, data):
-        self.status.update_balance(data.get("wallet", 0.0), self.app.balance_service.trading_balance)
+        self.status.update_balance(
+            data.get("wallet", 0.0),
+            self.app.balance_service.trading_balance
+        )
 
     def _on_positions_updated(self, data):
         self.positions.update(data)
+
+    def _on_orders_updated(self, data):
+        """Обработчик обновления ордеров"""
+        self.orders.update(data)
 
     def open_settings(self):
         from ui.windows.settings_window import SettingsWindow
