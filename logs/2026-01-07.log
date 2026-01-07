@@ -1999,3 +1999,95 @@ ymbol": "all"}
 [12:26:39] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
 [12:26:39] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
 [12:27:09] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[12:35:31] [INFO] Loaded 2 symbols from DB
+[12:35:31] [INFO] Авто-авторизация успешна
+[12:35:32] [INFO] Bybit connected successfully
+[12:35:33] [DEBUG] Wallet balance fetched: 9259.73509255
+[12:35:33] [DEBUG] Trading balance set: 40.0
+[12:35:34] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:35:34] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[12:35:47] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[12:35:48] [INFO] Trade opened and saved {"trade_id": 206}
+[12:35:48] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[12:35:50] [INFO] Trade opened and saved {"trade_id": 207}
+[12:35:50] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[12:35:51] [INFO] Trade opened and saved {"trade_id": 208}
+[12:35:51] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[12:35:53] [INFO] Trade opened and saved {"trade_id": 209}
+[12:35:53] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[12:35:55] [INFO] Trade opened and saved {"trade_id": 210}
+[12:35:57] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:35:59] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:36:18] [INFO] Loaded 2 symbols from DB
+[12:36:18] [INFO] Ожидание авторизации
+[12:36:38] [INFO] Авторизация успешна {"uid": "3de9995d-2d73-404b-9a0a-795113c3e475"}
+[12:36:41] [INFO] Bybit connected successfully
+[12:36:41] [DEBUG] Wallet balance fetched: 9263.77422952
+[12:36:41] [DEBUG] Trading balance set: 40.0
+[12:36:42] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[12:36:42] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:37:12] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[12:37:14] [INFO] Trade opened and saved {"trade_id": 211}
+[12:37:14] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[12:37:15] [INFO] Trade opened and saved {"trade_id": 212}
+[12:37:15] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[12:37:17] [INFO] Trade opened and saved {"trade_id": 213}
+[12:37:17] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[12:41:27] [INFO] Loaded 2 symbols from DB
+[12:41:27] [INFO] Ожидание авторизации
+[12:41:39] [INFO] Авторизация успешна {"uid": "3de9995d-2d73-404b-9a0a-795113c3e475"}
+[12:41:40] [INFO] Bybit connected successfully
+[12:41:40] [DEBUG] Wallet balance fetched: 9257.15195468
+[12:41:40] [DEBUG] Trading balance set: 40.0
+[12:41:41] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[12:41:41] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:41:42] [INFO] MainWindow инициализирован
+[12:41:46] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[12:41:47] [INFO] Trade opened and saved {"trade_id": 215}
+[12:41:47] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[12:41:49] [INFO] Trade opened and saved {"trade_id": 216}
+[12:41:49] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[12:41:51] [INFO] Trade opened and saved {"trade_id": 217}
+[12:41:51] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[12:41:52] [INFO] Trade opened and saved {"trade_id": 218}
+[12:41:52] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[12:41:54] [INFO] Trade opened and saved {"trade_id": 219}
+[12:41:58] [INFO] Loaded 2 symbols from DB
+[12:41:58] [INFO] Авто-авторизация успешна
+[12:41:59] [INFO] Bybit connected successfully
+[12:41:59] [DEBUG] Wallet balance fetched: 9259.76416206
+[12:41:59] [DEBUG] Trading balance set: 40.0
+[12:42:00] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[12:42:00] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:42:01] [INFO] MainWindow инициализирован
+[12:42:04] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[12:42:05] [INFO] Trade opened and saved {"trade_id": 220}
+[12:42:05] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[12:42:07] [INFO] Trade opened and saved {"trade_id": 221}
+[12:42:07] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[12:42:09] [INFO] Trade opened and saved {"trade_id": 222}
+[12:42:09] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[12:42:10] [INFO] Trade opened and saved {"trade_id": 223}
+[12:42:10] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[12:42:11] [INFO] Trade opened and saved {"trade_id": 224}
+[12:42:14] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:42:16] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:42:20] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:42:24] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:42:29] [INFO] Loaded 2 symbols from DB
+[12:42:29] [INFO] Авто-авторизация успешна
+[12:42:30] [INFO] Bybit connected successfully
+[12:42:30] [DEBUG] Wallet balance fetched: 9246.46320142
+[12:42:30] [DEBUG] Trading balance set: 40.0
+[12:42:30] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[12:42:31] [DEBUG] Загружено ордеров: 1 открытых, 10 исполненных {"total": 11}
+[12:42:31] [INFO] MainWindow инициализирован
+[12:42:35] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[12:42:36] [INFO] Trade opened and saved {"trade_id": 225}
+[12:42:36] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[12:42:37] [INFO] Trade opened and saved {"trade_id": 226}
+[12:42:37] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[12:42:39] [INFO] Trade opened and saved {"trade_id": 227}
+[12:42:39] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[12:42:41] [INFO] Trade opened and saved {"trade_id": 228}
+[12:42:41] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}

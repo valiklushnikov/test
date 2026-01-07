@@ -72,10 +72,6 @@ class App:
             return
         self._schedule_tasks()
         self.started = True
-        try:
-            self._update_prices()
-        except Exception:
-            pass
         self.events.emit("on_connected", {"ts": timestamp_ms()})
 
     def stop(self):
@@ -114,15 +110,18 @@ class App:
                 self.logger.error("API polling error", {"error": error_str})
 
     def _update_prices(self):
+        if not self.connected_bybit:
+            return
         try:
             self.price_service.fetch_prices()
             self.events.emit("on_price_updated", self.price_service.get_all_prices())
         except Exception as e:
             self.logger.error("Update prices error", {"error": str(e)})
-            self.events.emit("on_error", {"error": str(e)})
 
     def _update_balance(self):
         """Обновление баланса и позиций (параллельно)"""
+        if not self.connected_bybit:
+            return
         try:
             # Сначала устанавливаем trading balance (быстрая операция)
             tb = float(self.settings.get("trading_balance", "0"))
@@ -145,13 +144,13 @@ class App:
             })
         except Exception as e:
             self.logger.error("Update balance error", {"error": str(e)})
-            self.events.emit("on_error", {"error": str(e)})
 
     def _update_orders(self):
         """Обновление открытых ордеров (оптимизированная версия)"""
+        if not self.connected_bybit:
+            return
         try:
             # Используем новый оптимизированный метод для параллельной загрузки
-            # Это быстрее, чем запускать два отдельных запроса
             self.order_service.fetch_all_orders_parallel()
 
             # Отправляем объединенный список
@@ -159,7 +158,6 @@ class App:
             self.events.emit("on_orders_updated", all_orders)
         except Exception as e:
             self.logger.error("Update orders error", {"error": str(e)})
-            self.events.emit("on_error", {"error": str(e)})
 
     def _refresh_token(self):
         try:
@@ -169,7 +167,6 @@ class App:
                 self.update_symbols(pairs)
         except Exception as e:
             self.logger.error("Token refresh error", {"error": str(e)})
-            self.events.emit("on_error", {"error": str(e)})
 
     def update_symbols(self, pairs: Dict[str, dict]):
         """Обновляет символы в БД и в сервисе цен"""
@@ -213,6 +210,9 @@ class App:
 
     def _initial_data_load(self):
         """Параллельная загрузка всех данных при подключении"""
+        if not self.connected_bybit:
+            return
+
         try:
             # Сначала синхронно загружаем баланс для корректной инициализации
             self.balance_service.fetch_wallet_balance()

@@ -5,6 +5,7 @@ from ui.frames.prices_frame import PricesFrame
 from ui.frames.positions_frame import PositionsFrame
 from ui.frames.orders_frame import OrdersFrame
 from ui.frames.log_frame import LogFrame
+import threading
 
 
 class MainWindow:
@@ -86,31 +87,46 @@ class MainWindow:
         self.app.events.subscribe("on_api_status", self._on_api_status)
         self.app.events.subscribe("on_bybit_status", self._on_bybit_status)
 
-        # Инициализация сервисов и старт
-        self.app.configure_bybit()
-        self.app.start()
+        # Запускаем инициализацию в фоновом потоке
+        threading.Thread(target=self._initialize_async, daemon=True).start()
+
+    def _initialize_async(self):
+        """Асинхронная инициализация приложения"""
+        try:
+            # 1. Настройка Bybit (это может занять время)
+            self.app.configure_bybit()
+
+            # 2. Старт приложения (запуск scheduler и задач)
+            self.app.start()
+
+            self.app.logger.info("MainWindow инициализирован")
+        except Exception as e:
+            self.app.logger.error("Ошибка инициализации MainWindow", {"error": str(e)})
 
     def _on_bybit_status(self, data):
-        self.status.set_bybit_status(data.get("status", False))
+        status = data.get("status", False)
+        self.root.after(0, lambda s=status: self.status.set_bybit_status(s))
 
     def _on_api_status(self, data):
-        self.status.set_api_status(data.get("status", False))
+        status = data.get("status", False)
+        self.root.after(0, lambda s=status: self.status.set_api_status(s))
 
     def _on_price_updated(self, data):
-        self.prices.update_prices(data)
+        self.root.after(0, lambda d=dict(data): self.prices.update_prices(d))
 
     def _on_balance_updated(self, data):
-        self.status.update_balance(
-            data.get("wallet", 0.0),
-            self.app.balance_service.trading_balance
-        )
+        wallet = data.get("wallet", 0.0)
+        trading = self.app.balance_service.trading_balance
+        self.root.after(0, lambda w=wallet, t=trading: self.status.update_balance(w, t))
 
     def _on_positions_updated(self, data):
-        self.positions.update(data)
+        positions = list(data)
+        self.root.after(0, lambda p=positions: self.positions.update(p))
 
     def _on_orders_updated(self, data):
         """Обработчик обновления ордеров"""
-        self.orders.update(data)
+        orders = list(data)
+        self.root.after(0, lambda o=orders: self.orders.update(o))
 
     def open_settings(self):
         from ui.windows.settings_window import SettingsWindow

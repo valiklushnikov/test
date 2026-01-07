@@ -3,6 +3,7 @@ from tkinter import ttk
 from utils.validators import is_valid_uuid, is_valid_url
 from ui.windows.main_window import MainWindow
 from ui.widgets.loading_indicator import LoadingIndicator
+import threading
 
 
 class LoginWindow:
@@ -23,7 +24,8 @@ class LoginWindow:
         self.uid_entry = ttk.Entry(frame, textvariable=self.uid_var, show="*", width=40)
         self.uid_entry.grid(row=3, column=0, sticky="ew")
         self.status_var = tk.StringVar(value="Ожидание...")
-        ttk.Button(frame, text="Войти", command=self.login).grid(row=4, column=0, pady=8, sticky="ew")
+        self.login_btn = ttk.Button(frame, text="Войти", command=self.login)
+        self.login_btn.grid(row=4, column=0, pady=8, sticky="ew")
         ttk.Label(frame, textvariable=self.status_var).grid(row=5, column=0, sticky="w")
         frame.columnconfigure(0, weight=1)
         self._init_clipboard_support()
@@ -39,25 +41,49 @@ class LoginWindow:
         if not is_valid_uuid(uid):
             self.status_var.set("Ошибка: некорректный UID")
             return
+
+        # Отключаем кнопку входа
+        self.login_btn.config(state="disabled")
+        self.status_var.set("Подключение...")
+
+        # Запускаем авторизацию в отдельном потоке
+        threading.Thread(target=self._login_async, args=(url, uid), daemon=True).start()
+
+    def _login_async(self, url: str, uid: str):
+        """Выполняет авторизацию в фоновом потоке"""
         try:
+            # 1. Авторизация
             token, info, pairs = self.app.auth.login(url, uid)
+
+            # 2. Обновление символов (без загрузки цен)
             self.app.update_symbols(pairs)
-            try:
-                self.app._update_prices()
-            except Exception:
-                pass
+
+            # 3. Установка баланса мастера
             try:
                 self.app.balance_service.master_balance = float(info.get("balance", 0))
             except Exception:
                 self.app.balance_service.master_balance = 0.0
+
             self.app.logger.info("Авторизация успешна", {"uid": uid})
-            self.app.start()
-            self.app.settings.set("api_url", url)
-            self.status_var.set("Успешно")
-            self.root.after(200, self._to_main)
+
+            # Переключение на MainWindow должно происходить в главном потоке
+            # MainWindow сам запустит app.start() и настроит Bybit
+            self.root.after(0, self._switch_to_main_window, "Успешно")
+
         except Exception as e:
             self.app.logger.error("Авторизация ошибка", {"uid": uid, "error": str(e)})
-            self.status_var.set(f"Ошибка: {e}")
+            # Обновление UI должно происходить в главном потоке
+            self.root.after(0, self._on_login_error, str(e))
+
+    def _switch_to_main_window(self, message: str):
+        """Переключение на главное окно (вызывается в главном потоке)"""
+        self.status_var.set(message)
+        self.root.after(100, self._to_main)
+
+    def _on_login_error(self, error_message: str):
+        """Обработка ошибки входа (вызывается в главном потоке)"""
+        self.status_var.set(f"Ошибка: {error_message}")
+        self.login_btn.config(state="normal")
 
     def _to_main(self):
         for w in list(self.root.winfo_children()):
@@ -73,7 +99,6 @@ class LoginWindow:
         self.root.geometry(f"{w}x{h}+{x}+{y}")
 
     def _init_clipboard_support(self):
-        # Удалены дублирующие биндинги
         pass
 
     def _on_paste(self, e):
