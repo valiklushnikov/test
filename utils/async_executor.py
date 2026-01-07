@@ -47,13 +47,30 @@ class AsyncExecutor:
         Returns:
             Словарь {название: результат}
         """
-        futures = {name: self.executor.submit(func) for name, func in tasks.items()}
+        if not tasks:
+            return {}
+
+        futures = {}
+        for name, func in tasks.items():
+            try:
+                futures[name] = self.executor.submit(func)
+            except Exception as e:
+                print(f"ERROR submitting task {name}: {e}")
+                futures[name] = None
+
         results = {}
         for name, future in futures.items():
-            try:
-                results[name] = future.result()
-            except Exception as e:
+            if future is None:
                 results[name] = None
+                continue
+            try:
+                # Даем каждой задаче максимум 10 секунд
+                result = future.result(timeout=10)
+                results[name] = result
+            except Exception as e:
+                print(f"ERROR executing task {name}: {e}")
+                results[name] = None
+
         return results
 
     def shutdown(self):

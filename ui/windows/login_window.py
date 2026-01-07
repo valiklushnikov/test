@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from utils.validators import is_valid_uuid, is_valid_url
 from ui.windows.main_window import MainWindow
+from ui.widgets.loading_indicator import LoadingIndicator
 
 
 class LoginWindow:
@@ -27,6 +28,7 @@ class LoginWindow:
         frame.columnconfigure(0, weight=1)
         self._init_clipboard_support()
         self._init_context_menu()
+        self.loading = LoadingIndicator(frame)
 
     def login(self):
         url = self.url_var.get().strip()

@@ -11,11 +11,24 @@ class BalanceService:
 
     def fetch_wallet_balance(self):
         if not self.bybit:
+            self.logger.warning("Bybit API не инициализирован при запросе баланса")
             return
-        self.wallet_balance = float(self.bybit.get_balance())
+
+        try:
+            balance = float(self.bybit.get_balance())
+            self.wallet_balance = balance
+            self.logger.debug(f"Wallet balance fetched: {balance}")
+        except Exception as e:
+            self.logger.error("Error fetching wallet balance", {"error": str(e)})
+            self.wallet_balance = 0.0
 
     def set_trading_balance(self, amount: float):
-        self.trading_balance = float(amount)
+        try:
+            self.trading_balance = float(amount)
+            self.logger.debug(f"Trading balance set: {self.trading_balance}")
+        except Exception as e:
+            self.logger.error("Error setting trading balance", {"error": str(e)})
+            self.trading_balance = 0.0
 
     def get_ratio(self) -> float:
         if self.master_balance <= 0:

@@ -73,11 +73,6 @@ class MainWindow:
 
         paned.add(center, weight=3)
 
-        # # Добавляем панели с весами (1:2:2)
-        # paned.add(left, weight=1)
-        # paned.add(middle, weight=2)
-        # paned.add(right, weight=2)
-
         # === Лог внизу ===
         self.log = LogFrame(root, app)
         self.log.grid(row=2, column=0, sticky="ew", padx=4, pady=2)
@@ -87,7 +82,7 @@ class MainWindow:
         self.app.events.subscribe("on_price_updated", self._on_price_updated)
         self.app.events.subscribe("on_balance_updated", self._on_balance_updated)
         self.app.events.subscribe("on_positions_updated", self._on_positions_updated)
-        self.app.events.subscribe("on_orders_updated", self._on_orders_updated)  # ← Новое
+        self.app.events.subscribe("on_orders_updated", self._on_orders_updated)
         self.app.events.subscribe("on_api_status", self._on_api_status)
         self.app.events.subscribe("on_bybit_status", self._on_bybit_status)
 

@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 from PIL import Image, ImageTk
 from pathlib import Path
 from core.app import App
@@ -33,22 +34,87 @@ auth = AuthManager(settings, logger)
 events = EventBus()
 scheduler = Scheduler(logger)
 app = App(auth, events, scheduler, settings, logger, db)
-logger.set_sink(lambda level, message, data, ts: events.emit("on_ui_log", {"level": level, "message": f"{message}", "data": data, "ts": ts}))
+logger.set_sink(lambda level, message, data, ts: events.emit("on_ui_log",
+                                                             {"level": level, "message": f"{message}", "data": data,
+                                                              "ts": ts}))
+
+
+def show_splash(root):
+    """Показать splash screen на время инициализации"""
+    splash = tk.Toplevel(root)
+    splash.overrideredirect(True)  # Убираем рамку окна
+
+    # Размер splash
+    w, h = 300, 150
+    sw = splash.winfo_screenwidth()
+    sh = splash.winfo_screenheight()
+    x = (sw - w) // 2
+    y = (sh - h) // 2
+    splash.geometry(f"{w}x{h}+{x}+{y}")
+
+    # Содержимое splash - используем ttk.Frame с padding
+    frame = ttk.Frame(splash, padding=20)
+    frame.pack(fill="both", expand=True)
+
+    # Используем ttk.Label
+    ttk.Label(frame, text="ManekiTerminal v0.0.1", font=("Segoe UI", 16, "bold")).pack(pady=10)
+    ttk.Label(frame, text="Загрузка...", font=("Segoe UI", 10)).pack(pady=5)
+
+    # Используем ttk.Progressbar
+    progress = ttk.Progressbar(frame, mode="indeterminate", length=200)
+    progress.pack(pady=10)
+    progress.start(10)
+
+    return splash
 
 
 def run():
     root = tk.Tk()
     root.title("ManekiTerminal v0.0.1")
-    img = Image.open(icons_dir / "favicon-b.png")
-    icon = ImageTk.PhotoImage(img)
-    root.iconphoto(True, icon)
+
+    # Устанавливаем иконку если файл существует
+    icon_path = icons_dir / "favicon-b.png"
+    if icon_path.exists():
+        try:
+            img = Image.open(icon_path)
+            icon = ImageTk.PhotoImage(img)
+            root.iconphoto(True, icon)
+        except Exception as e:
+            logger.warning("Failed to load icon", {"error": str(e)})
+
+    root.withdraw()  # Скрываем главное окно
+
+    # Показываем splash
+    splash = show_splash(root)
+    root.update()
+
+    # Загружаем сессию (это может занять время)
     auth.load_session()
+
+    # Определяем какое окно показывать
     if auth.is_authenticated():
         logger.info("Авто-авторизация успешна")
         MainWindow(root, app)
     else:
         logger.info("Ожидание авторизации")
         LoginWindow(root, app)
+
+    # Обновляем геометрию перед показом
+    root.update_idletasks()
+
+    # Центрируем окно
+    w = root.winfo_reqwidth()
+    h = root.winfo_reqheight()
+    sw = root.winfo_screenwidth()
+    sh = root.winfo_screenheight()
+    x = (sw - w) // 2
+    y = (sh - h) // 2
+    root.geometry(f"+{x}+{y}")
+
+    # Закрываем splash и показываем главное окно
+    splash.destroy()
+    root.deiconify()
+
     root.mainloop()
 
 

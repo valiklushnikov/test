@@ -113,7 +113,7 @@ class BybitAPI:
         try:
             # Запускаем два запроса параллельно
             future_open = self._executor.submit(self.get_open_orders)
-            future_history = self._executor.submit(self.get_order_history, limit=20)
+            future_history = self._executor.submit(self.get_order_history, limit=10)
 
             # Ждём результаты
             open_orders = future_open.result(timeout=5)

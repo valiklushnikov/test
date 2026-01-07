@@ -124,13 +124,14 @@ class App:
     def _update_balance(self):
         """Обновление баланса и позиций (параллельно)"""
         try:
-            # Параллельное выполнение трёх операций
+            # Сначала устанавливаем trading balance (быстрая операция)
+            tb = float(self.settings.get("trading_balance", "0"))
+            self.balance_service.set_trading_balance(tb)
+
+            # Параллельное выполнение двух операций (balance и positions)
             tasks = {
                 'balance': lambda: self.balance_service.fetch_wallet_balance(),
-                'positions': lambda: self.position_service.fetch_positions(),
-                'trading_balance': lambda: self.balance_service.set_trading_balance(
-                    float(self.settings.get("trading_balance", "0"))
-                )
+                'positions': lambda: self.position_service.fetch_positions()
             }
 
             # Выполняем параллельно
@@ -149,6 +150,8 @@ class App:
     def _update_orders(self):
         """Обновление открытых ордеров (оптимизированная версия)"""
         try:
+            # Используем новый оптимизированный метод для параллельной загрузки
+            # Это быстрее, чем запускать два отдельных запроса
             self.order_service.fetch_all_orders_parallel()
 
             # Отправляем объединенный список
@@ -211,11 +214,27 @@ class App:
     def _initial_data_load(self):
         """Параллельная загрузка всех данных при подключении"""
         try:
+            # Сначала синхронно загружаем баланс для корректной инициализации
+            self.balance_service.fetch_wallet_balance()
+            tb = float(self.settings.get("trading_balance", "0"))
+            self.balance_service.set_trading_balance(tb)
+
+            # Эмитим начальные значения баланса
+            self.events.emit("on_balance_updated", {
+                "wallet": self.balance_service.wallet_balance,
+                "trading": self.balance_service.trading_balance
+            })
+
+            # Затем параллельно загружаем остальное
             tasks = {
-                'balance': lambda: self._update_balance(),
                 'prices': lambda: self._update_prices(),
-                'orders': lambda: self._update_orders()
+                'orders': lambda: self._update_orders(),
+                'positions': lambda: self.position_service.fetch_positions()
             }
             self.executor.run_parallel(tasks)
+
+            # Обновляем позиции
+            self.events.emit("on_positions_updated", self.position_service.positions)
+
         except Exception as e:
             self.logger.error("Initial data load error", {"error": str(e)})
