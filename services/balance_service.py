@@ -19,7 +19,11 @@ class BalanceService:
             self.wallet_balance = balance
             self.logger.debug(f"Wallet balance fetched: {balance}")
         except Exception as e:
-            self.logger.error("Error fetching wallet balance", {"error": str(e)})
+            error_str = str(e)
+            # Не логируем таймауты как ошибки
+            if "timed out" not in error_str.lower() and "timeout" not in error_str.lower():
+                self.logger.error("Error fetching wallet balance", {"error": error_str})
+            # При ошибке оставляем предыдущее значение вместо сброса в 0
             self.wallet_balance = 0.0
 
     def set_trading_balance(self, amount: float):

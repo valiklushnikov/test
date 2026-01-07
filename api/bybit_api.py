@@ -1,6 +1,7 @@
 from typing import Dict, List
 import requests
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError
+import time
 
 
 class BybitAPI:
@@ -10,6 +11,8 @@ class BybitAPI:
         self.session = None
         self.last_error = None
         self._executor = ThreadPoolExecutor(max_workers=5)
+        self._request_timeout = 10  # секунды
+        self._retry_attempts = 2
 
     def connect(self):
         try:
@@ -40,69 +43,117 @@ class BybitAPI:
         if not self.session:
             return 0.0
         try:
-            data = self.session.get_wallet_balance(accountType="UNIFIED")
-            if isinstance(data, dict):
-                list_data = data.get("result", {}).get("list", [])
-                if list_data:
-                    total = list_data[0].get("totalEquity")
-                    return float(total or 0.0)
+            def _fetch():
+                data = self.session.get_wallet_balance(accountType="UNIFIED")
+                if isinstance(data, dict):
+                    list_data = data.get("result", {}).get("list", [])
+                    if list_data:
+                        total = list_data[0].get("totalEquity")
+                        return float(total or 0.0)
+                return 0.0
+
+            return self._retry_request(_fetch)
         except Exception:
-            pass
-        return 0.0
+            return 0.0
 
     def get_positions(self, symbol: str | None = None) -> List[Dict]:
         if not self.session:
             return []
         try:
-            res = self.session.get_positions(category="linear",
-                                             symbol=symbol) if symbol else self.session.get_positions(category="linear")
-            items = res.get("result", {}).get("list", []) if isinstance(res, dict) else []
-            return items
+            def _fetch():
+                if symbol:
+                    res = self.session.get_positions(category="linear", symbol=symbol)
+                else:
+                    res = self.session.get_positions(category="linear")
+                return res.get("result", {}).get("list", []) if isinstance(res, dict) else []
+
+            return self._retry_request(_fetch)
         except Exception:
             return []
 
+    def _retry_request(self, func, *args, **kwargs):
+        """
+        Выполняет запрос с повторными попытками при таймауте
+
+        Args:
+            func: Функция для выполнения
+            *args, **kwargs: Параметры функции
+
+        Returns:
+            Результат функции или значение по умолчанию при ошибке
+        """
+        last_exception = None
+
+        for attempt in range(self._retry_attempts):
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                last_exception = e
+                error_str = str(e)
+
+                # Если это таймаут и есть еще попытки - ждем и пробуем снова
+                if "timed out" in error_str.lower() or "timeout" in error_str.lower():
+                    if attempt < self._retry_attempts - 1:
+                        time.sleep(0.5)  # Небольшая задержка перед повтором
+                        continue
+                # Для других ошибок сразу выходим
+                break
+
+        # Если все попытки исчерпаны, выбрасываем последнее исключение
+        if last_exception:
+            raise last_exception
+
     def get_open_orders(self, symbol: str | None = None) -> List[Dict]:
-        """ОПТИМИЗИРОВАНО: Быстрая загрузка открытых ордеров"""
+        """Получение открытых ордеров с retry-логикой"""
         if not self.session:
             return []
-        try:
-            if symbol:
-                res = self.session.get_open_orders(category="linear", symbol=symbol)
-            else:
-                res = self.session.get_open_orders(category="linear", settleCoin="USDT")
 
-            items = res.get("result", {}).get("list", []) if isinstance(res, dict) else []
-            return items
+        try:
+            def _fetch():
+                if symbol:
+                    res = self.session.get_open_orders(category="linear", symbol=symbol)
+                else:
+                    res = self.session.get_open_orders(category="linear", settleCoin="USDT")
+                return res.get("result", {}).get("list", []) if isinstance(res, dict) else []
+
+            return self._retry_request(_fetch)
+
         except Exception as e:
-            print(f"DEBUG: Exception in get_open_orders: {e}")
+            # Логируем только если это не таймаут (чтобы не спамить)
+            if "timed out" not in str(e).lower():
+                print(f"DEBUG: Exception in get_open_orders: {e}")
             return []
 
     def get_order_history(self, symbol: str | None = None, limit: int = 50) -> List[Dict]:
-        """ОПТИМИЗИРОВАНО: Быстрая загрузка истории ордеров"""
+        """Получение истории ордеров с retry-логикой"""
         if not self.session:
             return []
+
         try:
-            params = {
-                "category": "linear",
-                "limit": limit,
-                "orderStatus": "Filled"
-            }
+            def _fetch():
+                params = {
+                    "category": "linear",
+                    "limit": limit,
+                    "orderStatus": "Filled"
+                }
+                if symbol:
+                    params["symbol"] = symbol
+                else:
+                    params["settleCoin"] = "USDT"
 
-            if symbol:
-                params["symbol"] = symbol
-            else:
-                params["settleCoin"] = "USDT"
+                res = self.session.get_order_history(**params)
+                return res.get("result", {}).get("list", []) if isinstance(res, dict) else []
 
-            res = self.session.get_order_history(**params)
-            items = res.get("result", {}).get("list", []) if isinstance(res, dict) else []
-            return items
+            return self._retry_request(_fetch)
+
         except Exception as e:
-            print(f"DEBUG: Exception in get_order_history: {e}")
+            if "timed out" not in str(e).lower():
+                print(f"DEBUG: Exception in get_order_history: {e}")
             return []
 
     def get_orders_parallel(self) -> tuple:
         """
-        НОВЫЙ МЕТОД: Параллельная загрузка открытых и исполненных ордеров
+        Параллельная загрузка открытых и исполненных ордеров с обработкой таймаутов
 
         Returns:
             (open_orders, filled_orders)
@@ -111,17 +162,36 @@ class BybitAPI:
             return [], []
 
         try:
-            # Запускаем два запроса параллельно
+            # Запускаем два запроса параллельно с увеличенным таймаутом
             future_open = self._executor.submit(self.get_open_orders)
-            future_history = self._executor.submit(self.get_order_history, limit=10)
+            future_history = self._executor.submit(self.get_order_history, None, 10)
 
-            # Ждём результаты
-            open_orders = future_open.result(timeout=5)
-            filled_orders = future_history.result(timeout=5)
+            open_orders = []
+            filled_orders = []
+
+            # Ждём результаты с таймаутом
+            try:
+                open_orders = future_open.result(timeout=15)  # Увеличен таймаут
+            except TimeoutError:
+                # Если таймаут - просто возвращаем пустой список
+                pass
+            except Exception as e:
+                if "timed out" not in str(e).lower():
+                    print(f"DEBUG: Error fetching open orders: {e}")
+
+            try:
+                filled_orders = future_history.result(timeout=15)
+            except TimeoutError:
+                pass
+            except Exception as e:
+                if "timed out" not in str(e).lower():
+                    print(f"DEBUG: Error fetching order history: {e}")
 
             return open_orders, filled_orders
+
         except Exception as e:
-            print(f"DEBUG: Exception in get_orders_parallel: {e}")
+            if "timed out" not in str(e).lower():
+                print(f"DEBUG: Exception in get_orders_parallel: {e}")
             return [], []
 
     def place_order(self, symbol: str, side: str, qty: float, order_type: str, price: float | None = None) -> str:
@@ -172,13 +242,16 @@ class BybitAPI:
             return False
 
     def get_ticker(self, symbol: str) -> Dict:
-        """ОПТИМИЗИРОВАНО: Кэширование сессии"""
+        """Получение цены с retry-логикой"""
         if self.session:
             try:
-                res = self.session.get_tickers(category="linear", symbol=symbol)
-                items = res.get("result", {}).get("list", [])
-                price = float(items[0].get("lastPrice", 0.0)) if items else 0.0
-                return {"symbol": symbol, "price": price}
+                def _fetch():
+                    res = self.session.get_tickers(category="linear", symbol=symbol)
+                    items = res.get("result", {}).get("list", [])
+                    price = float(items[0].get("lastPrice", 0.0)) if items else 0.0
+                    return {"symbol": symbol, "price": price}
+
+                return self._retry_request(_fetch)
             except Exception:
                 pass
 
@@ -186,7 +259,7 @@ class BybitAPI:
         try:
             r = requests.get("https://api.bybit.com/v5/market/tickers",
                              params={"category": "linear", "symbol": symbol},
-                             timeout=3)
+                             timeout=5)
             j = r.json() if r.content else {}
             items = j.get("result", {}).get("list", [])
             price = float(items[0].get("lastPrice", 0.0)) if items else 0.0
@@ -195,37 +268,36 @@ class BybitAPI:
             return {"symbol": symbol, "price": 0.0}
 
     def get_tickers(self, symbols: List[str]) -> Dict[str, float]:
-        """ОПТИМИЗИРОВАНО: Batch запрос вместо множественных"""
+        """Batch загрузка цен с обработкой ошибок"""
         if not symbols:
             return {}
 
         # Если меньше 5 символов - batch запрос эффективнее
         if len(symbols) <= 5 and self.session:
             try:
-                # Один запрос для всех символов (без фильтра по symbol)
-                res = self.session.get_tickers(category="linear")
-                items = res.get("result", {}).get("list", [])
+                def _fetch():
+                    res = self.session.get_tickers(category="linear")
+                    items = res.get("result", {}).get("list", [])
+                    out = {}
+                    symbol_set = set(symbols)
+                    for item in items:
+                        sym = item.get("symbol")
+                        if sym in symbol_set:
+                            out[sym] = float(item.get("lastPrice", 0.0))
+                    # Заполняем отсутствующие нулями
+                    for s in symbols:
+                        if s not in out:
+                            out[s] = 0.0
+                    return out
 
-                out = {}
-                symbol_set = set(symbols)
-                for item in items:
-                    sym = item.get("symbol")
-                    if sym in symbol_set:
-                        out[sym] = float(item.get("lastPrice", 0.0))
-
-                # Заполняем отсутствующие нулями
-                for s in symbols:
-                    if s not in out:
-                        out[s] = 0.0
-
-                return out
+                return self._retry_request(_fetch)
             except Exception:
                 pass
 
         # Fallback: параллельная загрузка для каждого символа
         out = {}
         futures = {self._executor.submit(self.get_ticker, s): s for s in symbols}
-        for future in as_completed(futures):
+        for future in as_completed(futures, timeout=15):
             try:
                 result = future.result(timeout=3)
                 out[result["symbol"]] = result["price"]

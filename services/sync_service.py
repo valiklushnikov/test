@@ -11,14 +11,22 @@ class SyncService:
         self.executed_commands: Dict[str, bool] = {}
 
     def check_status(self, auth, app) -> bool:
-        api = MasterAPI(auth.settings.get("api_url", ""), auth.get_token())
+        api_url = auth.settings.get("api_url", "")
+        token = auth.get_token()
+
+        if not api_url or not token:
+            raise RuntimeError("API URL or token not configured")
+
+        api = MasterAPI(api_url, token)
         data = api.get_status()
-        
-        # In v1.0, status only returns hash, no pairs.
+
+        # В v1.0, status возвращает только hash, без pairs
         new_hash = data.get("hash", "")
         changed = new_hash != self.current_hash
+
         if changed:
             self.current_hash = new_hash
+
         return changed
 
     def fetch_commands(self, auth) -> List[Command]:

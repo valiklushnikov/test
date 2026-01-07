@@ -56,11 +56,17 @@ class PriceService:
                 self.logger.info("Обновление цен по Bybit", {"symbols": updated_count})
 
         except Exception as e:
-            self.logger.warning("Ошибка параллельной загрузки цен", {"error": str(e)})
+            error_str = str(e)
+            # Не логируем таймауты как ошибки
+            if "timed out" not in error_str.lower() and "timeout" not in error_str.lower():
+                self.logger.warning("Ошибка параллельной загрузки цен", {"error": error_str})
             # Fallback на последовательную загрузку
-            data = self.bybit.get_tickers(self.symbols)
-            if data:
-                self.prices.update(data)
+            try:
+                data = self.bybit.get_tickers(self.symbols)
+                if data:
+                    self.prices.update(data)
+            except Exception:
+                pass
 
     def _fetch_single_price(self, symbol: str) -> tuple:
         """Загрузка цены для одного символа"""

@@ -3,6 +3,7 @@ from services.price_service import PriceService
 from services.balance_service import BalanceService
 from services.position_service import PositionService
 from services.order_service import OrderService
+from services.history_service import HistoryService
 from services.sync_service import SyncService
 from utils.helpers import timestamp_ms
 from utils.async_executor import AsyncExecutor
@@ -12,7 +13,8 @@ from config import (
     BALANCE_UPDATE_INTERVAL,
     ORDERS_UPDATE_INTERVAL,
     POLLING_INTERVAL,
-    TOKEN_REFRESH_INTERVAL
+    TOKEN_REFRESH_INTERVAL,
+    HISTORY_UPDATE_INTERVAL
 )
 
 
@@ -37,6 +39,7 @@ class App:
         self.balance_service = BalanceService(logger)
         self.position_service = PositionService(logger)
         self.order_service = OrderService(logger)
+        self.history_service = HistoryService(logger)
         self.sync_service = SyncService(logger)
 
         # Bybit API
@@ -87,6 +90,7 @@ class App:
         self.scheduler.add_task("update_prices", PRICE_UPDATE_INTERVAL, self._update_prices)
         self.scheduler.add_task("update_balance", BALANCE_UPDATE_INTERVAL, self._update_balance)
         self.scheduler.add_task("update_orders", ORDERS_UPDATE_INTERVAL, self._update_orders)
+        self.scheduler.add_task("update_history", HISTORY_UPDATE_INTERVAL, self._update_history)
         self.scheduler.add_task("refresh_token", TOKEN_REFRESH_INTERVAL, self._refresh_token)
         self.scheduler.start()
 
@@ -122,10 +126,14 @@ class App:
         """Обновление баланса и позиций (параллельно)"""
         if not self.connected_bybit:
             return
+
         try:
             # Сначала устанавливаем trading balance (быстрая операция)
-            tb = float(self.settings.get("trading_balance", "0"))
-            self.balance_service.set_trading_balance(tb)
+            try:
+                tb = float(self.settings.get("trading_balance", "0"))
+                self.balance_service.set_trading_balance(tb)
+            except Exception as e:
+                self.logger.error("Failed to set trading balance", {"error": str(e)})
 
             # Параллельное выполнение двух операций (balance и positions)
             tasks = {
@@ -134,16 +142,30 @@ class App:
             }
 
             # Выполняем параллельно
-            self.executor.run_parallel(tasks)
+            try:
+                self.executor.run_parallel(tasks)
+            except Exception as e:
+                self.logger.error("Parallel execution error", {"error": str(e)})
 
-            # Эмитим события
-            self.events.emit("on_positions_updated", self.position_service.positions)
-            self.events.emit("on_balance_updated", {
-                "wallet": self.balance_service.wallet_balance,
-                "trading": self.balance_service.trading_balance
-            })
+            # Эмитим события даже если были ошибки (покажем последние известные данные)
+            try:
+                self.events.emit("on_positions_updated", self.position_service.positions)
+            except Exception as e:
+                self.logger.error("Failed to emit positions", {"error": str(e)})
+
+            try:
+                self.events.emit("on_balance_updated", {
+                    "wallet": self.balance_service.wallet_balance,
+                    "trading": self.balance_service.trading_balance
+                })
+            except Exception as e:
+                self.logger.error("Failed to emit balance", {"error": str(e)})
+
         except Exception as e:
-            self.logger.error("Update balance error", {"error": str(e)})
+            error_str = str(e)
+            # Не логируем таймауты как серьезные ошибки
+            if "timed out" not in error_str.lower() and "timeout" not in error_str.lower():
+                self.logger.error("Update balance error", {"error": error_str})
 
     def _update_orders(self):
         """Обновление открытых ордеров (оптимизированная версия)"""
@@ -159,9 +181,27 @@ class App:
         except Exception as e:
             self.logger.error("Update orders error", {"error": str(e)})
 
+    def _update_history(self):
+        """Обновление истории ордеров (оптимизированная версия)"""
+        if not self.connected_bybit:
+            return
+        try:
+            # Используем новый оптимизированный метод для параллельной загрузки
+            self.history_service.fetch_orders_history()
+
+            # Отправляем объединенный список
+            all_history = self.history_service.get_all_orders_history()
+            self.events.emit("on_history_updated", all_history)
+        except Exception as e:
+            self.logger.error("Update history error", {"error": str(e)})
+
     def _refresh_token(self):
         try:
             token = self.auth.refresh_token()
+            if token:
+                self.settings.set("token", token)
+                self.settings.save()
+                self.logger.info("Token refreshed successfully")
             pairs = self.auth.get_pairs()
             if pairs:
                 self.update_symbols(pairs)

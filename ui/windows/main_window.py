@@ -60,7 +60,7 @@ class MainWindow:
         self.positions = PositionsFrame(positions_tab, app)
         self.positions.grid(row=0, column=0, sticky="nsew")
 
-        notebook.add(positions_tab, text="Позиции")
+        notebook.add(positions_tab, text="Текущие")
 
         # --- Вкладка 2: Ордера ---
         orders_tab = ttk.Frame(notebook)
@@ -70,7 +70,7 @@ class MainWindow:
         self.orders = OrdersFrame(orders_tab, app)
         self.orders.grid(row=0, column=0, sticky="nsew")
 
-        notebook.add(orders_tab, text="Ордера")
+        notebook.add(orders_tab, text="История")
 
         paned.add(center, weight=3)
 

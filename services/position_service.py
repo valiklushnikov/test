@@ -21,7 +21,10 @@ class PositionService:
             self.logger.debug(f"Загружено позиций: {len(self.positions)}",
                               {"symbol": symbol or "all"})
         except Exception as e:
-            self.logger.error("Ошибка загрузки позиций", {"error": str(e)})
+            error_str = str(e)
+            # Не логируем таймауты как ошибки
+            if "timed out" not in error_str.lower() and "timeout" not in error_str.lower():
+                self.logger.error("Ошибка загрузки позиций", {"error": str(e)})
             self.positions = []
 
     def get_position(self, symbol: str, side: str) -> Optional[Dict]:

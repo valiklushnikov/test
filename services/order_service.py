@@ -38,7 +38,10 @@ class OrderService:
                 {"total": total}
             )
         except Exception as e:
-            self.logger.error("Ошибка параллельной загрузки ордеров", {"error": str(e)})
+            error_str = str(e)
+            # Не логируем таймауты как ошибки (это нормально при нестабильной сети)
+            if "timed out" not in error_str.lower() and "timeout" not in error_str.lower():
+                self.logger.error("Ошибка параллельной загрузки ордеров", {"error": error_str})
             self.open_orders = []
             self.order_history = []
 

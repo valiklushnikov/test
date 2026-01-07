@@ -34,18 +34,34 @@ class AuthManager:
         url = self.settings.get("api_url", "")
         if not url:
             return self._token or ""
-        api = MasterAPI(url, self._token)
-        # uid может отсутствовать в self._info после перезапуска, берем из settings или кэша
+
         uid = self._info.get("uid") or self.settings.get("uid", "")
         if not uid:
-             # Если uid потерян, пробуем просто init без uid (если API позволяет) или не обновляем
-             # В данном случае, лучше вернуть текущий токен
              return self._token or ""
-             
-        res = api.init(uid)
-        self._token = res.get("token", self._token)
-        self._pairs = res.get("pairs", self._pairs)
-        return self._token
+        try:
+            api = MasterAPI(url, self._token)
+            res = api.init(uid)
+
+            new_token = res.get("token", "")
+            if new_token:
+                self._token = new_token
+
+            new_pairs = res.get("pairs", {})
+            if new_pairs:
+                self._pairs = new_pairs
+
+            info = res.get("info", {})
+            if isinstance(info, dict) and info:
+                self._info.update(info)
+                if "uid" not in self._info:
+                    self._info["uid"] = uid
+
+            return self._token
+
+        except Exception as e:
+            self.logger.error("Failed to refresh token", {"error": str(e)})
+            # Возвращаем текущий токен если обновление не удалось
+            return self._token or ""
 
     def logout(self):
         self._token = None

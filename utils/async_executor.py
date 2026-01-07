@@ -64,11 +64,17 @@ class AsyncExecutor:
                 results[name] = None
                 continue
             try:
-                # Даем каждой задаче максимум 10 секунд
-                result = future.result(timeout=10)
+                # Даем каждой задаче максимум 15 секунд (увеличен с 10)
+                result = future.result(timeout=15)
                 results[name] = result
+            except TimeoutError:
+                # Таймауты не логируем - это нормально
+                results[name] = None
             except Exception as e:
-                print(f"ERROR executing task {name}: {e}")
+                error_str = str(e)
+                # Логируем только не-таймаут ошибки
+                if "timed out" not in error_str.lower() and "timeout" not in error_str.lower():
+                    print(f"ERROR executing task {name}: {e}")
                 results[name] = None
 
         return results
