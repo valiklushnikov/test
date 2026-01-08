@@ -34,7 +34,7 @@ class OrdersFrame(ttk.Frame):
             self.tree.heading(col, text=header)
 
         # Настройка ширины колонок
-        self.tree.column("id", width=100, anchor="w", stretch=True)
+        self.tree.column("id", width=80, anchor="center", stretch=True)
         self.tree.column("time", width=80, anchor="center", stretch=True)
         self.tree.column("symbol", width=70, anchor="center", stretch=True)
         self.tree.column("side", width=50, anchor="center", stretch=True)
@@ -52,9 +52,8 @@ class OrdersFrame(ttk.Frame):
         vs.pack(side="right", fill="y")
 
         # Тэги для раскраски
-        self.tree.tag_configure("filled", foreground="green")
         self.tree.tag_configure("new", foreground="blue")
-        self.tree.tag_configure("cancelled", foreground="red")
+        self.tree.tag_configure("partial", foreground="orange")
 
     def update(self, orders: list):
         existing_ids = set(self.tree.get_children())
@@ -83,7 +82,7 @@ class OrdersFrame(ttk.Frame):
             )
 
             values = (
-                order_id[:18],
+                order_id[-8:],
                 time_str,
                 symbol,
                 side,
@@ -93,13 +92,7 @@ class OrdersFrame(ttk.Frame):
                 status
             )
 
-            tag = ""
-            if status == "Filled":
-                tag = "filled"
-            elif status in ("New", "PartiallyFilled"):
-                tag = "new"
-            elif status == "Cancelled":
-                tag = "cancelled"
+            tag = "partial" if status == "PartiallyFilled" else "new"
 
             if order_id in existing_ids:
                 self.tree.item(order_id, values=values, tags=(tag,))

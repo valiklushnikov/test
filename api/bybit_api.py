@@ -21,7 +21,7 @@ class BybitAPI:
                 testnet=True,
                 api_key=self.api_key,
                 api_secret=self.api_secret,
-                recv_window=10000,
+                recv_window=20000,  # Увеличено с 10000 до 20000
             )
         except Exception as e:
             self.session = None
@@ -91,10 +91,10 @@ class BybitAPI:
                 last_exception = e
                 error_str = str(e)
 
-                # Если это таймаут и есть еще попытки - ждем и пробуем снова
-                if "timed out" in error_str.lower() or "timeout" in error_str.lower():
+                # Если это таймаут или recv_window ошибка и есть еще попытки - ждем и пробуем снова
+                if any(x in error_str.lower() for x in ["timed out", "timeout", "recv_window", "timestamp"]):
                     if attempt < self._retry_attempts - 1:
-                        time.sleep(0.5)  # Небольшая задержка перед повтором
+                        time.sleep(1)  # Увеличена задержка до 1 секунды
                         continue
                 # Для других ошибок сразу выходим
                 break
@@ -120,7 +120,8 @@ class BybitAPI:
 
         except Exception as e:
             # Логируем только если это не таймаут (чтобы не спамить)
-            if "timed out" not in str(e).lower():
+            error_str = str(e)
+            if not any(x in error_str.lower() for x in ["timed out", "timeout", "retrying"]):
                 print(f"DEBUG: Exception in get_open_orders: {e}")
             return []
 
@@ -147,7 +148,8 @@ class BybitAPI:
             return self._retry_request(_fetch)
 
         except Exception as e:
-            if "timed out" not in str(e).lower():
+            error_str = str(e)
+            if not any(x in error_str.lower() for x in ["timed out", "timeout", "retrying"]):
                 print(f"DEBUG: Exception in get_order_history: {e}")
             return []
 
@@ -171,26 +173,29 @@ class BybitAPI:
 
             # Ждём результаты с таймаутом
             try:
-                open_orders = future_open.result(timeout=15)  # Увеличен таймаут
+                open_orders = future_open.result(timeout=20)  # Увеличен таймаут
             except TimeoutError:
                 # Если таймаут - просто возвращаем пустой список
                 pass
             except Exception as e:
-                if "timed out" not in str(e).lower():
+                error_str = str(e)
+                if not any(x in error_str.lower() for x in ["timed out", "timeout", "retrying"]):
                     print(f"DEBUG: Error fetching open orders: {e}")
 
             try:
-                filled_orders = future_history.result(timeout=15)
+                filled_orders = future_history.result(timeout=20)
             except TimeoutError:
                 pass
             except Exception as e:
-                if "timed out" not in str(e).lower():
+                error_str = str(e)
+                if not any(x in error_str.lower() for x in ["timed out", "timeout", "retrying"]):
                     print(f"DEBUG: Error fetching order history: {e}")
 
             return open_orders, filled_orders
 
         except Exception as e:
-            if "timed out" not in str(e).lower():
+            error_str = str(e)
+            if not any(x in error_str.lower() for x in ["timed out", "timeout", "retrying"]):
                 print(f"DEBUG: Exception in get_orders_parallel: {e}")
             return [], []
 
@@ -297,9 +302,9 @@ class BybitAPI:
         # Fallback: параллельная загрузка для каждого символа
         out = {}
         futures = {self._executor.submit(self.get_ticker, s): s for s in symbols}
-        for future in as_completed(futures, timeout=15):
+        for future in as_completed(futures, timeout=20):
             try:
-                result = future.result(timeout=3)
+                result = future.result(timeout=5)
                 out[result["symbol"]] = result["price"]
             except Exception:
                 symbol = futures[future]

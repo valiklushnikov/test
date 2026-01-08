@@ -1,9 +1,9 @@
 from tkinter import ttk
 from datetime import datetime
-
+from config import HISTORY_ORDERS_LIMIT
 
 class HistoryFrame(ttk.Frame):
-    """Фрейм для отображения открытых и недавно исполненных ордеров"""
+    """Фрейм для отображения истории исполненных ордеров"""
 
     def __init__(self, parent, app):
         super().__init__(parent)
@@ -34,7 +34,7 @@ class HistoryFrame(ttk.Frame):
             self.tree.heading(col, text=header)
 
         # Настройка ширины колонок
-        self.tree.column("id", width=100, anchor="w", stretch=True)
+        self.tree.column("id", width=80, anchor="center", stretch=True)
         self.tree.column("time", width=80, anchor="center", stretch=True)
         self.tree.column("symbol", width=70, anchor="center", stretch=True)
         self.tree.column("side", width=50, anchor="center", stretch=True)
@@ -53,14 +53,21 @@ class HistoryFrame(ttk.Frame):
 
         # Тэги для раскраски
         self.tree.tag_configure("filled", foreground="green")
-        self.tree.tag_configure("new", foreground="blue")
         self.tree.tag_configure("cancelled", foreground="red")
+        self.tree.tag_configure("rejected", foreground="orange")
 
     def update(self, orders: list):
-        existing_ids = set(self.tree.get_children())
-        processed_ids = set()
+        """Обновить историю ордеров"""
+        # Сортируем ордера по времени (новые первыми)
+        sorted_orders = sorted(
+            orders,
+            key=lambda o: int(o.get("updatedTime") or o.get("createdTime") or 0),
+            reverse=True
+        )
 
-        for order in orders:
+        # Собираем данные для отображения
+        orders_data = []
+        for order in sorted_orders[:HISTORY_ORDERS_LIMIT]:  # Берем максимум 100 записей
             order_id = order.get("orderId")
             if not order_id:
                 continue
@@ -70,12 +77,14 @@ class HistoryFrame(ttk.Frame):
             order_type = order.get("orderType", "")
             qty = float(order.get("qty", 0))
 
+            # Для истории берем среднюю цену исполнения
             avg_price = float(order.get("avgPrice") or 0)
             order_price = float(order.get("price") or 0)
             display_price = avg_price if avg_price > 0 else order_price
 
             status = order.get("orderStatus", "")
 
+            # Используем время обновления для истории
             timestamp = int(order.get("updatedTime") or order.get("createdTime") or 0)
             time_str = (
                 datetime.fromtimestamp(timestamp / 1000).strftime("%H:%M:%S")
@@ -83,7 +92,7 @@ class HistoryFrame(ttk.Frame):
             )
 
             values = (
-                order_id[:18],
+                order_id[-8:],
                 time_str,
                 symbol,
                 side,
@@ -93,30 +102,36 @@ class HistoryFrame(ttk.Frame):
                 status
             )
 
+            # Определяем тег по статусу
             tag = ""
             if status == "Filled":
                 tag = "filled"
-            elif status in ("New", "PartiallyFilled"):
-                tag = "new"
             elif status == "Cancelled":
                 tag = "cancelled"
+            elif status == "Rejected":
+                tag = "rejected"
 
-            if order_id in existing_ids:
-                self.tree.item(order_id, values=values, tags=(tag,))
-            else:
-                self.tree.insert("", 0, iid=order_id, values=values, tags=(tag,))
+            orders_data.append((order_id, values, tag, timestamp))
 
-            processed_ids.add(order_id)
+        # Получаем текущие ID
+        existing_ids = {self.tree.item(iid)["values"][0]: iid for iid in self.tree.get_children()}
+        new_order_ids = {data[0][-8:] for data in orders_data}
 
-        # удаляем устаревшие
-        for iid in existing_ids - processed_ids:
-            self.tree.delete(iid)
+        # Удаляем устаревшие записи
+        for short_id, iid in list(existing_ids.items()):
+            if short_id not in new_order_ids:
+                self.tree.delete(iid)
 
-        # лимит 50 строк
-        for iid in self.tree.get_children()[50:]:
-            self.tree.delete(iid)
+        # Обновляем или добавляем записи
+        # Очищаем дерево и заполняем заново в правильном порядке
+        # Это предотвращает "прыжки" списка
+        for item in self.tree.get_children():
+            self.tree.delete(item)
+
+        for order_id, values, tag, timestamp in orders_data:
+            self.tree.insert("", "end", iid=order_id, values=values, tags=(tag,))
 
     def clear(self):
-        """Очистить все ордера"""
+        """Очистить всю историю"""
         for item in self.tree.get_children():
             self.tree.delete(item)

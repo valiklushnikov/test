@@ -4,6 +4,7 @@ from ui.frames.status_frame import StatusFrame
 from ui.frames.prices_frame import PricesFrame
 from ui.frames.positions_frame import PositionsFrame
 from ui.frames.orders_frame import OrdersFrame
+from ui.frames.history_frame import HistoryFrame
 from ui.frames.log_frame import LogFrame
 import threading
 
@@ -52,25 +53,41 @@ class MainWindow:
         notebook = ttk.Notebook(center)
         notebook.grid(row=0, column=0, sticky="nsew")
 
-        # --- Вкладка 1: Позиции ---
-        positions_tab = ttk.Frame(notebook)
-        positions_tab.rowconfigure(0, weight=1)
-        positions_tab.columnconfigure(0, weight=1)
+        # --- Вкладка 1: Текущие (Позиции + Открытые ордера) ---
+        current_tab = ttk.Frame(notebook)
+        current_tab.rowconfigure(0, weight=1)
+        current_tab.rowconfigure(1, weight=1)
+        current_tab.columnconfigure(0, weight=1)
 
-        self.positions = PositionsFrame(positions_tab, app)
+        # Фрейм для позиций
+        positions_label_frame = ttk.LabelFrame(current_tab, text="Позиции", padding=2)
+        positions_label_frame.grid(row=0, column=0, sticky="nsew", padx=2, pady=2)
+        positions_label_frame.rowconfigure(0, weight=1)
+        positions_label_frame.columnconfigure(0, weight=1)
+
+        self.positions = PositionsFrame(positions_label_frame, app)
         self.positions.grid(row=0, column=0, sticky="nsew")
 
-        notebook.add(positions_tab, text="Текущие")
+        # Фрейм для открытых ордеров
+        orders_label_frame = ttk.LabelFrame(current_tab, text="Открытые ордера", padding=2)
+        orders_label_frame.grid(row=1, column=0, sticky="nsew", padx=2, pady=2)
+        orders_label_frame.rowconfigure(0, weight=1)
+        orders_label_frame.columnconfigure(0, weight=1)
 
-        # --- Вкладка 2: Ордера ---
-        orders_tab = ttk.Frame(notebook)
-        orders_tab.rowconfigure(0, weight=1)
-        orders_tab.columnconfigure(0, weight=1)
-
-        self.orders = OrdersFrame(orders_tab, app)
+        self.orders = OrdersFrame(orders_label_frame, app)
         self.orders.grid(row=0, column=0, sticky="nsew")
 
-        notebook.add(orders_tab, text="История")
+        notebook.add(current_tab, text="Текущие")
+
+        # --- Вкладка 2: История ордеров ---
+        history_tab = ttk.Frame(notebook)
+        history_tab.rowconfigure(0, weight=1)
+        history_tab.columnconfigure(0, weight=1)
+
+        self.history = HistoryFrame(history_tab, app)
+        self.history.grid(row=0, column=0, sticky="nsew")
+
+        notebook.add(history_tab, text="История")
 
         paned.add(center, weight=3)
 
@@ -84,6 +101,7 @@ class MainWindow:
         self.app.events.subscribe("on_balance_updated", self._on_balance_updated)
         self.app.events.subscribe("on_positions_updated", self._on_positions_updated)
         self.app.events.subscribe("on_orders_updated", self._on_orders_updated)
+        self.app.events.subscribe("on_history_updated", self._on_history_updated)
         self.app.events.subscribe("on_api_status", self._on_api_status)
         self.app.events.subscribe("on_bybit_status", self._on_bybit_status)
 
@@ -127,6 +145,11 @@ class MainWindow:
         """Обработчик обновления ордеров"""
         orders = list(data)
         self.root.after(0, lambda o=orders: self.orders.update(o))
+
+    def _on_history_updated(self, data):
+        """Обработчик обновления истории ордеров"""
+        history = list(data)
+        self.root.after(0, lambda h=history: self.history.update(h))
 
     def open_settings(self):
         from ui.windows.settings_window import SettingsWindow

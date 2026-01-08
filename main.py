@@ -1,3 +1,4 @@
+import sys
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
@@ -14,11 +15,40 @@ from storage.settings import Settings
 from database.db import Database
 from database.migrations import run_migrations
 
-base_dir = Path(__file__).resolve().parent
+
+def get_base_dir():
+    """
+    Получить базовую директорию приложения
+    Работает как в dev режиме, так и в упакованном EXE
+    """
+    if getattr(sys, 'frozen', False):
+        # Запущено из EXE - используем директорию где лежит EXE
+        return Path(sys.executable).parent
+    else:
+        # Запущено из исходников
+        return Path(__file__).resolve().parent
+
+
+def get_resource_path(relative_path):
+    """
+    Получить абсолютный путь к ресурсу
+    Работает как в dev режиме, так и в PyInstaller bundle
+    """
+    if getattr(sys, 'frozen', False):
+        # PyInstaller создает временную папку _MEIPASS
+        base_path = Path(sys._MEIPASS)
+    else:
+        base_path = Path(__file__).resolve().parent
+
+    return base_path / relative_path
+
+
+# Определяем базовую директорию
+base_dir = get_base_dir()
 
 logs_dir = base_dir / "logs"
 data_dir = base_dir / "data"
-icons_dir = base_dir / "icons"
+icons_dir = get_resource_path("icons")
 
 logs_dir.mkdir(parents=True, exist_ok=True)
 data_dir.mkdir(parents=True, exist_ok=True)
@@ -88,14 +118,12 @@ def run():
     splash = show_splash(root)
     root.update()
 
-    # Загружаем сессию (это быстрая операция)
+    # Загружаем сессию (это может занять время)
     auth.load_session()
 
     # Определяем какое окно показывать
     if auth.is_authenticated():
         logger.info("Авто-авторизация успешна")
-        # Для авторизованного пользователя сразу показываем главное окно
-        # Инициализация данных будет происходить асинхронно в MainWindow
         MainWindow(root, app)
     else:
         logger.info("Ожидание авторизации")

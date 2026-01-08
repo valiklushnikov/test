@@ -14,7 +14,8 @@ from config import (
     ORDERS_UPDATE_INTERVAL,
     POLLING_INTERVAL,
     TOKEN_REFRESH_INTERVAL,
-    HISTORY_UPDATE_INTERVAL
+    HISTORY_UPDATE_INTERVAL,
+    HISTORY_ORDERS_LIMIT
 )
 
 
@@ -48,6 +49,7 @@ class App:
         self.balance_service.set_bybit(self.bybit)
         self.position_service.set_bybit(self.bybit)
         self.order_service.set_bybit(self.bybit)
+        self.history_service.set_bybit(self.bybit)
 
         # Загружаем символы из БД
         self._load_symbols_from_db()
@@ -168,30 +170,30 @@ class App:
                 self.logger.error("Update balance error", {"error": error_str})
 
     def _update_orders(self):
-        """Обновление открытых ордеров (оптимизированная версия)"""
+        """Обновление ТОЛЬКО открытых ордеров"""
         if not self.connected_bybit:
             return
         try:
-            # Используем новый оптимизированный метод для параллельной загрузки
-            self.order_service.fetch_all_orders_parallel()
+            # Получаем только открытые ордера
+            self.order_service.fetch_open_orders()
 
-            # Отправляем объединенный список
-            all_orders = self.order_service.get_all_orders_combined()
-            self.events.emit("on_orders_updated", all_orders)
+            # Отправляем только открытые ордера
+            open_orders = self.order_service.get_all_orders()
+            self.events.emit("on_orders_updated", open_orders)
         except Exception as e:
             self.logger.error("Update orders error", {"error": str(e)})
 
     def _update_history(self):
-        """Обновление истории ордеров (оптимизированная версия)"""
+        """Обновление истории ордеров (с интервалом 60с)"""
         if not self.connected_bybit:
             return
         try:
-            # Используем новый оптимизированный метод для параллельной загрузки
-            self.history_service.fetch_orders_history()
+            # Получаем историю исполненных ордеров
+            self.history_service.fetch_orders_history(symbol=None, limit=HISTORY_ORDERS_LIMIT)
 
-            # Отправляем объединенный список
-            all_history = self.history_service.get_all_orders_history()
-            self.events.emit("on_history_updated", all_history)
+            # Отправляем историю
+            history = self.history_service.get_all_orders_history()
+            self.events.emit("on_history_updated", history)
         except Exception as e:
             self.logger.error("Update history error", {"error": str(e)})
 
@@ -237,6 +239,7 @@ class App:
         self.balance_service.set_bybit(self.bybit)
         self.position_service.set_bybit(self.bybit)
         self.order_service.set_bybit(self.bybit)
+        self.history_service.set_bybit(self.bybit)
 
         from services.trade_service import TradeService
         self.trade_service = TradeService(self.bybit, self.logger)
@@ -269,12 +272,14 @@ class App:
             tasks = {
                 'prices': lambda: self._update_prices(),
                 'orders': lambda: self._update_orders(),
-                'positions': lambda: self.position_service.fetch_positions()
+                'positions': lambda: self.position_service.fetch_positions(),
+                'history': lambda: self.history_service.fetch_orders_history()
             }
             self.executor.run_parallel(tasks)
 
             # Обновляем позиции
             self.events.emit("on_positions_updated", self.position_service.positions)
+            self.events.emit("on_history_updated", self.history_service.get_all_orders_history())
 
         except Exception as e:
             self.logger.error("Initial data load error", {"error": str(e)})

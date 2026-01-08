@@ -1,4 +1,5 @@
 from typing import List, Dict, Optional
+from config import HISTORY_ORDERS_LIMIT
 
 
 class HistoryService:
@@ -13,7 +14,7 @@ class HistoryService:
         """Установка ссылки на Bybit API"""
         self.bybit = bybit
 
-    def fetch_orders_history(self, symbol: Optional[str] = None, limit: int = 20):
+    def fetch_orders_history(self, symbol: Optional[str] = None, limit: int = HISTORY_ORDERS_LIMIT):
         """
         Получить историю исполненных ордеров
 
@@ -27,7 +28,6 @@ class HistoryService:
 
         try:
             orders_history = self.bybit.get_order_history(symbol, limit)
-            print(orders_history)
 
             self.order_history = orders_history
 

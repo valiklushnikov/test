@@ -3182,3 +3182,845 @@ symbol": "all"}
 [17:06:40] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
 [17:06:42] [INFO] Trade opened and saved {"trade_id": 287}
 [17:06:42] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[17:30:44] [INFO] Loaded 2 symbols from DB
+[17:30:44] [INFO] Авто-авторизация успешна
+[17:30:45] [INFO] Bybit connected successfully
+[17:30:45] [DEBUG] Wallet balance fetched: 6430.57612319
+[17:30:45] [DEBUG] Trading balance set: 40.0
+[17:30:45] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:30:45] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:30:45] [DEBUG] Загружено истории: 20 исполненных
+[17:30:57] [INFO] Token refreshed successfully
+[17:30:57] [INFO] MainWindow инициализирован
+[17:31:00] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[17:31:02] [INFO] Trade opened and saved {"trade_id": 288}
+[17:31:02] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[17:31:04] [INFO] Trade opened and saved {"trade_id": 289}
+[17:31:04] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[17:31:06] [INFO] Trade opened and saved {"trade_id": 290}
+[17:31:06] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[17:31:07] [INFO] Trade opened and saved {"trade_id": 291}
+[17:31:07] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[17:31:09] [INFO] Trade opened and saved {"trade_id": 292}
+[17:31:11] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:31:15] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:31:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:31:28] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:31:34] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:31:41] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:31:46] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:31:52] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:31:57] [DEBUG] Trading balance set: 40.0
+[17:31:57] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:31:57] [DEBUG] Wallet balance fetched: 6431.91379523
+[17:31:58] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:32:04] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:32:07] [DEBUG] Загружено истории: 20 исполненных
+[17:32:11] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:32:17] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:32:23] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:32:29] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:32:35] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:32:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:32:47] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:32:54] [INFO] Loaded 2 symbols from DB
+[17:32:54] [INFO] Авто-авторизация успешна
+[17:32:55] [INFO] Bybit connected successfully
+[17:32:55] [DEBUG] Wallet balance fetched: 6467.95987619
+[17:32:55] [DEBUG] Trading balance set: 40.0
+[17:32:56] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:32:56] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:32:56] [DEBUG] Загружено истории: 20 исполненных
+[17:32:57] [INFO] Token refreshed successfully
+[17:32:57] [INFO] MainWindow инициализирован
+[17:33:00] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[17:33:02] [INFO] Trade opened and saved {"trade_id": 293}
+[17:33:02] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[17:33:04] [INFO] Trade opened and saved {"trade_id": 294}
+[17:33:04] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[17:33:05] [INFO] Trade opened and saved {"trade_id": 295}
+[17:33:05] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[17:33:07] [INFO] Trade opened and saved {"trade_id": 296}
+[17:33:07] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[17:33:08] [INFO] Trade opened and saved {"trade_id": 297}
+[17:33:11] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:33:15] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:33:21] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:33:27] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:33:33] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:33:41] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:33:47] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:33:52] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:33:57] [DEBUG] Trading balance set: 40.0
+[17:33:58] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:33:58] [DEBUG] Wallet balance fetched: 6433.71048775
+[17:33:58] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:34:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:34:07] [DEBUG] Загружено истории: 20 исполненных
+[17:34:11] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:34:17] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:34:23] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:34:29] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:34:36] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:34:41] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:34:48] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:34:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:34:58] [DEBUG] Trading balance set: 40.0
+[17:34:58] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:34:58] [DEBUG] Wallet balance fetched: 6433.80921174
+[17:35:00] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:35:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:35:12] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:35:18] [DEBUG] Загружено истории: 20 исполненных
+[17:35:18] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:35:24] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:35:30] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:35:37] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:35:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:35:48] [INFO] Loaded 2 symbols from DB
+[17:35:48] [INFO] Авто-авторизация успешна
+[17:35:50] [INFO] Bybit connected successfully
+[17:35:50] [DEBUG] Wallet balance fetched: 6443.89059636
+[17:35:50] [DEBUG] Trading balance set: 40.0
+[17:35:51] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:35:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:35:52] [DEBUG] Загружено истории: 20 исполненных
+[17:35:53] [INFO] Token refreshed successfully
+[17:35:53] [INFO] MainWindow инициализирован
+[17:35:56] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[17:35:58] [INFO] Trade opened and saved {"trade_id": 298}
+[17:35:58] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[17:36:00] [INFO] Trade opened and saved {"trade_id": 299}
+[17:36:00] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[17:36:02] [INFO] Trade opened and saved {"trade_id": 300}
+[17:36:02] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[17:36:04] [INFO] Trade opened and saved {"trade_id": 301}
+[17:36:04] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[17:36:09] [INFO] Trade opened and saved {"trade_id": 302}
+[17:36:14] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:36:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:36:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:36:28] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:36:34] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:36:40] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:36:47] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:36:53] [DEBUG] Trading balance set: 40.0
+[17:36:53] [DEBUG] Wallet balance fetched: 6478.85857867
+[17:36:53] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:36:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:36:59] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:37:03] [DEBUG] Загружено истории: 20 исполненных
+[17:37:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:39:27] [INFO] Loaded 2 symbols from DB
+[17:39:27] [INFO] Авто-авторизация успешна
+[17:39:28] [INFO] Bybit connected successfully
+[17:39:28] [DEBUG] Wallet balance fetched: 6436.38245317
+[17:39:28] [DEBUG] Trading balance set: 40.0
+[17:39:29] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:39:29] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:39:30] [DEBUG] Загружено истории: 20 исполненных
+[17:39:30] [INFO] Token refreshed successfully
+[17:39:31] [INFO] MainWindow инициализирован
+[17:39:42] [INFO] Loaded 2 symbols from DB
+[17:39:42] [INFO] Авто-авторизация успешна
+[17:39:43] [INFO] Bybit connected successfully
+[17:39:43] [DEBUG] Wallet balance fetched: 6436.51774356
+[17:39:43] [DEBUG] Trading balance set: 40.0
+[17:39:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:39:44] [DEBUG] Загружено истории: 20 исполненных
+[17:39:44] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:39:45] [INFO] Token refreshed successfully
+[17:39:45] [INFO] MainWindow инициализирован
+[17:39:48] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[17:39:49] [INFO] Trade opened and saved {"trade_id": 303}
+[17:39:49] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[17:39:51] [INFO] Trade opened and saved {"trade_id": 304}
+[17:39:51] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[17:39:53] [INFO] Trade opened and saved {"trade_id": 305}
+[17:39:53] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[17:40:05] [INFO] Loaded 2 symbols from DB
+[17:40:05] [INFO] Авто-авторизация успешна
+[17:40:06] [INFO] Bybit connected successfully
+[17:40:06] [DEBUG] Wallet balance fetched: 6436.62381282
+[17:40:06] [DEBUG] Trading balance set: 40.0
+[17:40:06] [DEBUG] Загружено истории: 20 исполненных
+[17:40:07] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:40:07] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:40:07] [INFO] Token refreshed successfully
+[17:40:07] [INFO] MainWindow инициализирован
+[17:40:10] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[17:40:12] [INFO] Trade opened and saved {"trade_id": 307}
+[17:40:12] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[17:40:14] [INFO] Trade opened and saved {"trade_id": 308}
+[17:40:14] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[17:40:16] [INFO] Trade opened and saved {"trade_id": 309}
+[17:40:16] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[17:40:17] [INFO] Trade opened and saved {"trade_id": 310}
+[17:40:17] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[17:40:19] [INFO] Trade opened and saved {"trade_id": 311}
+[17:40:21] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:40:25] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:40:32] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:40:37] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:40:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:40:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:40:56] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:41:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:41:07] [DEBUG] Trading balance set: 40.0
+[17:41:08] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:41:08] [DEBUG] Wallet balance fetched: 6474.63199803
+[17:41:08] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:41:14] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:41:18] [DEBUG] Загружено истории: 20 исполненных
+[17:41:20] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:41:27] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:41:33] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:41:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:41:45] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:41:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:41:57] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:42:04] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:42:08] [DEBUG] Trading balance set: 40.0
+[17:42:08] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:42:08] [DEBUG] Wallet balance fetched: 6459.98520826
+[17:42:10] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:42:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:42:23] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:42:28] [DEBUG] Загружено истории: 20 исполненных
+[17:42:29] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:42:35] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:42:41] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:46:22] [INFO] Loaded 2 symbols from DB
+[17:46:22] [INFO] Авто-авторизация успешна
+[17:46:22] [INFO] Bybit connected successfully
+[17:46:23] [DEBUG] Wallet balance fetched: 6441.07414259
+[17:46:23] [DEBUG] Trading balance set: 40.0
+[17:46:23] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:46:23] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:46:24] [DEBUG] Загружено истории: 20 исполненных
+[17:46:25] [INFO] Token refreshed successfully
+[17:46:25] [INFO] MainWindow инициализирован
+[17:46:29] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[17:46:30] [INFO] Trade opened and saved {"trade_id": 312}
+[17:46:30] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[17:46:32] [INFO] Trade opened and saved {"trade_id": 313}
+[17:46:32] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[17:46:33] [INFO] Trade opened and saved {"trade_id": 314}
+[17:46:33] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[17:46:35] [INFO] Trade opened and saved {"trade_id": 315}
+[17:46:35] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[17:46:36] [INFO] Trade opened and saved {"trade_id": 316}
+[17:46:38] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:46:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:46:48] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:46:55] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:47:01] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:47:08] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:47:13] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:47:19] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:47:25] [DEBUG] Trading balance set: 40.0
+[17:47:25] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:47:25] [DEBUG] Wallet balance fetched: 6457.3425251
+[17:47:25] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:47:31] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:47:35] [DEBUG] Загружено истории: 20 исполненных
+[17:47:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:47:45] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:47:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:47:57] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:48:04] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:48:10] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:48:45] [INFO] Loaded 2 symbols from DB
+[17:48:45] [INFO] Авто-авторизация успешна
+[17:48:47] [INFO] Bybit connected successfully
+[17:48:48] [DEBUG] Wallet balance fetched: 6465.35929948
+[17:48:48] [DEBUG] Trading balance set: 40.0
+[17:48:48] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:48:48] [DEBUG] Загружено истории: 20 исполненных
+[17:48:50] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:48:51] [INFO] Token refreshed successfully
+[17:48:51] [INFO] MainWindow инициализирован
+[17:48:55] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[17:56:41] [INFO] Loaded 2 symbols from DB
+[17:56:42] [INFO] Авто-авторизация успешна
+[17:56:42] [INFO] Bybit connected successfully
+[17:56:42] [DEBUG] Wallet balance fetched: 6436.49603357
+[17:56:42] [DEBUG] Trading balance set: 40.0
+[17:56:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:56:43] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:56:44] [DEBUG] Загружено истории: 20 исполненных
+[17:56:50] [INFO] Token refreshed successfully
+[17:56:50] [INFO] MainWindow инициализирован
+[17:56:54] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[17:56:55] [INFO] Trade opened and saved {"trade_id": 317}
+[17:56:55] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[17:56:57] [INFO] Trade opened and saved {"trade_id": 318}
+[17:56:57] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[17:56:58] [INFO] Trade opened and saved {"trade_id": 319}
+[17:56:58] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[17:57:00] [INFO] Trade opened and saved {"trade_id": 320}
+[17:57:00] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[17:57:02] [INFO] Trade opened and saved {"trade_id": 321}
+[17:57:03] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:57:09] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:57:14] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:57:21] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:57:27] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:57:33] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:57:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:57:45] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:57:50] [DEBUG] Trading balance set: 40.0
+[17:57:50] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:57:50] [DEBUG] Wallet balance fetched: 6441.02077265
+[17:57:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:57:57] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:58:00] [DEBUG] Загружено истории: 20 исполненных
+[17:58:04] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:58:11] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:58:17] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:58:23] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:58:30] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:58:36] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:58:42] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:58:48] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:58:51] [DEBUG] Trading balance set: 40.0
+[17:58:51] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[17:58:51] [DEBUG] Wallet balance fetched: 6437.77726741
+[17:58:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:59:00] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:59:07] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:59:11] [DEBUG] Загружено истории: 20 исполненных
+[17:59:13] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:59:19] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:59:24] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[17:59:59] [INFO] Loaded 2 symbols from DB
+[17:59:59] [INFO] Авто-авторизация успешна
+[18:00:00] [INFO] Bybit connected successfully
+[18:00:00] [DEBUG] Wallet balance fetched: 6574.36162351
+[18:00:00] [DEBUG] Trading balance set: 40.0
+[18:00:01] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:00:01] [DEBUG] Загружено истории: 20 исполненных
+[18:00:01] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:00:02] [INFO] Token refreshed successfully
+[18:00:02] [INFO] MainWindow инициализирован
+[18:00:06] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[18:00:07] [INFO] Trade opened and saved {"trade_id": 322}
+[18:00:07] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[18:00:09] [INFO] Trade opened and saved {"trade_id": 323}
+[18:00:09] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[18:00:11] [INFO] Trade opened and saved {"trade_id": 324}
+[18:00:11] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[18:00:12] [INFO] Trade opened and saved {"trade_id": 325}
+[18:00:12] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[18:00:14] [INFO] Trade opened and saved {"trade_id": 326}
+[18:00:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:00:20] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:00:26] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:00:33] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:00:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:00:46] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:00:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:00:57] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:01:02] [DEBUG] Trading balance set: 40.0
+[18:01:02] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:01:02] [DEBUG] Wallet balance fetched: 6587.05683162
+[18:01:03] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:01:09] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:01:13] [DEBUG] Загружено истории: 20 исполненных
+[18:01:15] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:01:21] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:01:26] [INFO] Loaded 2 symbols from DB
+[18:01:26] [INFO] Авто-авторизация успешна
+[18:01:26] [INFO] Bybit connected successfully
+[18:01:27] [DEBUG] Wallet balance fetched: 6589.60589799
+[18:01:27] [DEBUG] Trading balance set: 40.0
+[18:01:27] [DEBUG] Загружено истории: 20 исполненных
+[18:01:28] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:01:28] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:01:29] [INFO] Token refreshed successfully
+[18:01:29] [INFO] MainWindow инициализирован
+[18:01:32] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[18:01:34] [INFO] Trade opened and saved {"trade_id": 327}
+[18:01:34] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[18:01:35] [INFO] Trade opened and saved {"trade_id": 328}
+[18:01:35] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[18:01:36] [INFO] Trade opened and saved {"trade_id": 329}
+[18:01:36] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[18:01:38] [INFO] Trade opened and saved {"trade_id": 330}
+[18:01:38] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[18:01:40] [INFO] Trade opened and saved {"trade_id": 331}
+[18:06:07] [INFO] Loaded 2 symbols from DB
+[18:06:07] [INFO] Авто-авторизация успешна
+[18:06:09] [INFO] Bybit connected successfully
+[18:06:10] [DEBUG] Wallet balance fetched: 6574.10072984
+[18:06:10] [DEBUG] Trading balance set: 40.0
+[18:06:11] [DEBUG] Загружено истории: 20 исполненных
+[18:06:11] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:06:11] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:06:12] [INFO] Token refreshed successfully
+[18:06:12] [INFO] MainWindow инициализирован
+[18:06:16] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[18:06:17] [INFO] Trade opened and saved {"trade_id": 332}
+[18:06:17] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[18:06:19] [INFO] Trade opened and saved {"trade_id": 333}
+[18:06:19] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[18:06:21] [INFO] Trade opened and saved {"trade_id": 334}
+[18:06:21] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[18:06:23] [INFO] Trade opened and saved {"trade_id": 335}
+[18:06:23] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[18:06:25] [INFO] Trade opened and saved {"trade_id": 336}
+[18:06:28] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:06:33] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:06:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:06:45] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:06:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:06:57] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:07:04] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:07:09] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:07:14] [DEBUG] Trading balance set: 40.0
+[18:07:14] [DEBUG] Wallet balance fetched: 6575.51424924
+[18:07:15] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:07:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:07:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:07:24] [DEBUG] Загружено истории: 20 исполненных
+[18:07:27] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:07:34] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:07:40] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:07:46] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:07:52] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:07:59] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:08:05] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:08:12] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:08:14] [DEBUG] Trading balance set: 40.0
+[18:08:14] [DEBUG] Wallet balance fetched: 6579.45407772
+[18:08:14] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:08:17] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:08:20] [INFO] Loaded 2 symbols from DB
+[18:08:20] [INFO] Авто-авторизация успешна
+[18:08:21] [INFO] Bybit connected successfully
+[18:08:22] [DEBUG] Wallet balance fetched: 6591.68631253
+[18:08:22] [DEBUG] Trading balance set: 40.0
+[18:08:22] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:08:23] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:08:23] [DEBUG] Загружено истории: 20 исполненных
+[18:08:24] [INFO] Token refreshed successfully
+[18:08:24] [INFO] MainWindow инициализирован
+[18:08:27] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[18:08:29] [INFO] Trade opened and saved {"trade_id": 337}
+[18:08:29] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[18:08:31] [INFO] Trade opened and saved {"trade_id": 338}
+[18:08:31] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[18:08:32] [INFO] Trade opened and saved {"trade_id": 339}
+[18:08:32] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[18:08:34] [INFO] Trade opened and saved {"trade_id": 340}
+[18:08:34] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[18:08:36] [INFO] Trade opened and saved {"trade_id": 341}
+[18:08:38] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:08:42] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:08:48] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:08:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:09:00] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:09:08] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:09:13] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:09:19] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:09:24] [DEBUG] Trading balance set: 40.0
+[18:09:25] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:09:25] [DEBUG] Wallet balance fetched: 6574.3252373
+[18:09:25] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:09:31] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:09:34] [DEBUG] Загружено истории: 20 исполненных
+[18:09:38] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:09:44] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:09:50] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:09:51] [INFO] Processing command {"id": 22, "symbol": "ETHUSDT", "side": "open"}
+[18:09:56] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:10:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:10:09] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:10:15] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:10:21] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:10:24] [DEBUG] Trading balance set: 40.0
+[18:10:24] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:10:25] [DEBUG] Wallet balance fetched: 6573.95824356
+[18:10:27] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:10:33] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:10:39] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:10:45] [DEBUG] Загружено истории: 20 исполненных
+[18:10:46] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:10:52] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:10:58] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:11:05] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:11:10] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:11:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:11:23] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:11:26] [DEBUG] Trading balance set: 40.0
+[18:11:26] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:11:26] [DEBUG] Wallet balance fetched: 6585.62625735
+[18:11:29] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:11:35] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:11:41] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:11:47] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:11:53] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:11:55] [DEBUG] Загружено истории: 20 исполненных
+[18:11:59] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:12:05] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:12:13] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:12:18] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:12:24] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:12:25] [DEBUG] Trading balance set: 40.0
+[18:12:25] [DEBUG] Wallet balance fetched: 6597.92760597
+[18:12:26] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:12:30] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:12:36] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:12:42] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:12:48] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:12:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:13:00] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:13:05] [DEBUG] Загружено истории: 20 исполненных
+[18:13:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:13:12] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:13:19] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:13:25] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:13:26] [DEBUG] Trading balance set: 40.0
+[18:13:26] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:13:26] [DEBUG] Wallet balance fetched: 6586.59131229
+[18:13:31] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:13:37] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:13:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:13:50] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:13:56] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:14:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:14:08] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:14:14] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:14:15] [DEBUG] Загружено истории: 20 исполненных
+[18:14:20] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:14:26] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:14:26] [DEBUG] Trading balance set: 40.0
+[18:14:26] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:14:26] [DEBUG] Wallet balance fetched: 6589.843834
+[18:14:32] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:14:38] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:14:44] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:14:50] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:15:00] [INFO] Loaded 2 symbols from DB
+[18:15:00] [INFO] Авто-авторизация успешна
+[18:15:01] [INFO] Bybit connected successfully
+[18:15:01] [DEBUG] Wallet balance fetched: 6576.01462834
+[18:15:01] [DEBUG] Trading balance set: 40.0
+[18:15:02] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:15:12] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:15:15] [DEBUG] Загружено истории: 0 исполненных
+[18:15:17] [INFO] Token refreshed successfully
+[18:15:17] [INFO] MainWindow инициализирован
+[18:15:20] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[18:15:22] [INFO] Trade opened and saved {"trade_id": 342}
+[18:15:22] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[18:15:23] [INFO] Trade opened and saved {"trade_id": 343}
+[18:15:23] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[18:15:25] [INFO] Trade opened and saved {"trade_id": 344}
+[18:15:25] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[18:15:26] [INFO] Trade opened and saved {"trade_id": 345}
+[18:15:27] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[18:15:28] [INFO] Trade opened and saved {"trade_id": 346}
+[18:15:28] [INFO] Processing command {"id": 22, "symbol": "ETHUSDT", "side": "open"}
+[18:15:31] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:15:36] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:15:42] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:15:48] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:15:54] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:16:00] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:16:06] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:16:12] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:16:17] [DEBUG] Trading balance set: 40.0
+[18:16:18] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:16:18] [DEBUG] Wallet balance fetched: 6592.05616222
+[18:18:55] [INFO] Loaded 2 symbols from DB
+[18:18:55] [INFO] Авто-авторизация успешна
+[18:18:56] [INFO] Bybit connected successfully
+[18:18:56] [DEBUG] Wallet balance fetched: 6573.35411989
+[18:18:56] [DEBUG] Trading balance set: 40.0
+[18:18:57] [DEBUG] Загружено истории: 20 исполненных
+[18:18:57] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:18:57] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:18:57] [INFO] Token refreshed successfully
+[18:18:57] [INFO] MainWindow инициализирован
+[18:19:01] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[18:19:03] [INFO] Trade opened and saved {"trade_id": 347}
+[18:19:03] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[18:19:05] [INFO] Trade opened and saved {"trade_id": 348}
+[18:19:05] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[18:19:06] [INFO] Trade opened and saved {"trade_id": 349}
+[18:19:06] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[18:19:08] [INFO] Trade opened and saved {"trade_id": 350}
+[18:19:08] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[18:19:09] [INFO] Trade opened and saved {"trade_id": 351}
+[18:19:09] [INFO] Processing command {"id": 22, "symbol": "ETHUSDT", "side": "open"}
+[18:19:12] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:19:17] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:19:23] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:19:29] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:19:35] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:19:41] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:19:47] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:19:53] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:19:57] [DEBUG] Trading balance set: 40.0
+[18:19:58] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:19:58] [DEBUG] Wallet balance fetched: 6573.76968304
+[18:19:59] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:20:05] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:20:08] [DEBUG] Загружено истории: 20 исполненных
+[18:20:11] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:20:18] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:20:24] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:20:30] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:20:37] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:20:43] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:20:49] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:20:56] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:20:58] [DEBUG] Trading balance set: 40.0
+[18:20:58] [DEBUG] Wallet balance fetched: 6573.60522121
+[18:20:58] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:21:01] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:21:07] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:21:13] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:21:18] [DEBUG] Загружено истории: 20 исполненных
+[18:21:20] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:21:26] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:21:32] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:21:38] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:21:44] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:21:51] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:21:57] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:21:58] [DEBUG] Trading balance set: 40.0
+[18:21:58] [DEBUG] Wallet balance fetched: 6573.61179968
+[18:21:59] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:22:03] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:22:09] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:22:13] [INFO] Processing command {"id": 23, "symbol": "ETHUSDT", "side": "open"}
+[18:22:14] [INFO] Trade opened and saved {"trade_id": 352}
+[18:22:16] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:22:22] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:22:28] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:22:28] [DEBUG] Загружено истории: 20 исполненных
+[18:22:34] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:22:41] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:22:47] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:22:53] [DEBUG] Загружено ордеров: 1 {"symbol": "all"}
+[18:22:58] [INFO] Processing command {"id": 24, "symbol": "ETHUSDT", "side": "open"}
+[18:23:00] [INFO] Trade opened and saved {"trade_id": 353}
+[18:23:00] [DEBUG] Trading balance set: 40.0
+[18:23:01] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:23:01] [DEBUG] Wallet balance fetched: 6624.76052122
+[18:23:01] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:23:06] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:23:13] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:23:19] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:23:25] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:23:31] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:23:37] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:23:39] [DEBUG] Загружено истории: 20 исполненных
+[18:23:43] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:23:49] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:23:56] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:24:00] [DEBUG] Trading balance set: 40.0
+[18:24:00] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:24:00] [DEBUG] Wallet balance fetched: 6623.2581065
+[18:24:02] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:24:09] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:24:14] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:24:20] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:24:26] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:24:32] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:24:39] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:24:45] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:24:51] [DEBUG] Загружено истории: 20 исполненных
+[18:24:51] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:24:57] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:25:00] [DEBUG] Trading balance set: 40.0
+[18:25:00] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:25:00] [DEBUG] Wallet balance fetched: 6573.38984577
+[18:25:03] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:25:10] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:25:16] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:25:22] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:25:28] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:25:36] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:25:42] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:25:48] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:25:55] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:26:01] [DEBUG] Trading balance set: 40.0
+[18:26:01] [DEBUG] Wallet balance fetched: 6573.00171652
+[18:26:01] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:26:01] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:26:02] [DEBUG] Загружено истории: 20 исполненных
+[18:26:07] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:26:14] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:26:20] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:36:40] [INFO] Loaded 2 symbols from DB
+[18:36:40] [INFO] Авто-авторизация успешна
+[18:36:41] [INFO] Bybit connected successfully
+[18:36:41] [DEBUG] Wallet balance fetched: 6572.94908882
+[18:36:41] [DEBUG] Trading balance set: 40.0
+[18:36:42] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:36:42] [DEBUG] Загружено истории: 20 исполненных
+[18:36:42] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:36:43] [INFO] Token refreshed successfully
+[18:36:43] [INFO] MainWindow инициализирован
+[18:36:47] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[18:36:49] [INFO] Trade opened and saved {"trade_id": 354}
+[18:36:49] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[18:36:52] [INFO] Trade opened and saved {"trade_id": 355}
+[18:36:52] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[18:36:53] [INFO] Trade opened and saved {"trade_id": 356}
+[18:36:53] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[18:38:58] [INFO] Loaded 2 symbols from DB
+[18:38:58] [INFO] Авто-авторизация успешна
+[18:38:59] [INFO] Bybit connected successfully
+[18:38:59] [DEBUG] Wallet balance fetched: 6601.80054781
+[18:38:59] [DEBUG] Trading balance set: 40.0
+[18:38:59] [DEBUG] Загружено ордеров: 2 {"symbol": "all"}
+[18:39:00] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:39:00] [DEBUG] Загружено истории: 20 исполненных
+[18:39:01] [INFO] Token refreshed successfully
+[18:39:01] [INFO] MainWindow инициализирован
+[18:39:05] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[18:39:06] [INFO] Trade opened and saved {"trade_id": 357}
+[18:39:06] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[18:39:08] [INFO] Trade opened and saved {"trade_id": 358}
+[18:39:08] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[18:39:10] [INFO] Trade opened and saved {"trade_id": 359}
+[18:39:10] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[18:39:12] [INFO] Trade opened and saved {"trade_id": 360}
+[18:39:12] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[18:39:14] [INFO] Trade opened and saved {"trade_id": 361}
+[18:39:14] [INFO] Processing command {"id": 22, "symbol": "ETHUSDT", "side": "open"}
+[18:39:15] [INFO] Processing command {"id": 23, "symbol": "ETHUSDT", "side": "open"}
+[18:39:16] [INFO] Trade opened and saved {"trade_id": 362}
+[18:39:16] [INFO] Processing command {"id": 24, "symbol": "ETHUSDT", "side": "open"}
+[18:39:18] [INFO] Trade opened and saved {"trade_id": 363}
+[18:39:20] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:39:24] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:39:30] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:39:37] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:39:42] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:39:50] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:39:54] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:40:00] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:40:02] [DEBUG] Trading balance set: 40.0
+[18:40:02] [DEBUG] Wallet balance fetched: 6580.64581289
+[18:40:02] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:40:06] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:40:12] [DEBUG] Загружено истории: 20 исполненных
+[18:40:13] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:40:20] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:47:15] [INFO] Loaded 2 symbols from DB
+[18:47:15] [INFO] Авто-авторизация успешна
+[18:47:15] [INFO] Bybit connected successfully
+[18:47:16] [DEBUG] Wallet balance fetched: 6573.03970841
+[18:47:16] [DEBUG] Trading balance set: 40.0
+[18:47:17] [DEBUG] Загружено истории: 20 исполненных
+[18:47:17] [DEBUG] Загружено ордеров: 3 {"symbol": "all"}
+[18:47:17] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:47:17] [INFO] Token refreshed successfully
+[18:47:18] [INFO] MainWindow инициализирован
+[18:47:22] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[18:47:23] [INFO] Trade opened and saved {"trade_id": 364}
+[18:47:23] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[18:47:25] [INFO] Trade opened and saved {"trade_id": 365}
+[18:47:25] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[18:47:26] [INFO] Trade opened and saved {"trade_id": 366}
+[18:47:26] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[18:47:28] [INFO] Trade opened and saved {"trade_id": 367}
+[18:47:28] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[18:47:29] [INFO] Trade opened and saved {"trade_id": 368}
+[18:47:29] [INFO] Processing command {"id": 22, "symbol": "ETHUSDT", "side": "open"}
+[18:47:30] [INFO] Processing command {"id": 23, "symbol": "ETHUSDT", "side": "open"}
+[18:47:32] [INFO] Trade opened and saved {"trade_id": 369}
+[18:47:32] [INFO] Processing command {"id": 24, "symbol": "ETHUSDT", "side": "open"}
+[18:47:38] [INFO] Trade opened and saved {"trade_id": 370}
+[18:47:40] [DEBUG] Загружено ордеров: 4 {"symbol": "all"}
+[18:47:46] [DEBUG] Загружено ордеров: 4 {"symbol": "all"}
+[18:47:51] [DEBUG] Загружено ордеров: 4 {"symbol": "all"}
+[18:47:57] [DEBUG] Загружено ордеров: 4 {"symbol": "all"}
+[18:54:34] [INFO] Loaded 2 symbols from DB
+[18:54:35] [INFO] Авто-авторизация успешна
+[18:54:37] [INFO] Bybit connected successfully
+[18:54:38] [DEBUG] Wallet balance fetched: 6578.30004012
+[18:54:38] [DEBUG] Trading balance set: 40.0
+[18:54:38] [DEBUG] Загружено ордеров: 4 {"symbol": "all"}
+[18:54:39] [DEBUG] Загружено истории: 20 исполненных
+[18:54:42] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[18:54:43] [INFO] Token refreshed successfully
+[18:54:43] [INFO] MainWindow инициализирован
+[18:54:47] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[18:54:49] [INFO] Trade opened and saved {"trade_id": 371}
+[18:54:49] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[18:54:51] [INFO] Trade opened and saved {"trade_id": 372}
+[18:54:51] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[19:14:02] [INFO] Loaded 2 symbols from DB
+[19:14:02] [INFO] Авто-авторизация успешна
+[19:14:03] [INFO] Bybit connected successfully
+[19:14:03] [DEBUG] Wallet balance fetched: 6572.95269048
+[19:14:03] [DEBUG] Trading balance set: 40.0
+[19:14:04] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[19:14:04] [DEBUG] Загружено истории: 20 исполненных
+[19:14:05] [DEBUG] Загружено ордеров: 4 {"symbol": "all"}
+[19:14:06] [INFO] Token refreshed successfully
+[19:14:06] [INFO] MainWindow инициализирован
+[19:14:10] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[19:14:12] [INFO] Trade opened and saved {"trade_id": 374}
+[19:14:12] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[19:49:22] [INFO] Loaded 2 symbols from DB
+[19:49:22] [INFO] Авто-авторизация успешна
+[19:49:23] [INFO] Bybit connected successfully
+[19:49:23] [DEBUG] Wallet balance fetched: 6572.91017082
+[19:49:23] [DEBUG] Trading balance set: 40.0
+[19:49:24] [DEBUG] Загружено ордеров: 4 {"symbol": "all"}
+[19:49:24] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[19:49:24] [DEBUG] Загружено истории: 20 исполненных
+[19:49:25] [INFO] Token refreshed successfully
+[19:49:25] [INFO] MainWindow инициализирован
+[19:49:29] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[19:49:30] [INFO] Trade opened and saved {"trade_id": 376}
+[19:49:30] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[20:09:18] [INFO] Loaded 2 symbols from DB
+[20:09:18] [INFO] Авто-авторизация успешна
+[20:09:19] [INFO] Bybit connected successfully
+[20:09:19] [DEBUG] Wallet balance fetched: 6732.0864848
+[20:09:19] [DEBUG] Trading balance set: 40.0
+[20:09:20] [DEBUG] Загружено ордеров: 4 {"symbol": "all"}
+[20:09:20] [DEBUG] Загружено позиций: 0 {"symbol": "all"}
+[20:09:20] [DEBUG] Загружено истории: 20 исполненных
+[20:09:21] [INFO] Token refreshed successfully
+[20:09:21] [INFO] MainWindow инициализирован
+[20:09:25] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[20:09:27] [INFO] Trade opened and saved {"trade_id": 378}
+[20:09:27] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[20:09:29] [INFO] Trade opened and saved {"trade_id": 379}
+[20:09:29] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[20:09:31] [INFO] Trade opened and saved {"trade_id": 380}
+[20:09:31] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[20:09:32] [INFO] Trade opened and saved {"trade_id": 381}
+[20:09:32] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[20:09:34] [INFO] Trade opened and saved {"trade_id": 382}
+[20:09:34] [INFO] Processing command {"id": 22, "symbol": "ETHUSDT", "side": "open"}
+[20:11:11] [INFO] Loaded 2 symbols from DB
+[20:11:11] [INFO] Авто-авторизация успешна
+[20:11:12] [INFO] Bybit connected successfully
+[20:11:13] [INFO] Token refreshed successfully
+[20:11:13] [INFO] MainWindow инициализирован
+[20:11:17] [INFO] Processing command {"id": 16, "symbol": "ETHUSDT", "side": "open"}
+[20:11:18] [INFO] Trade opened and saved {"trade_id": 383}
+[20:11:18] [INFO] Processing command {"id": 18, "symbol": "ETHUSDT", "side": "open"}
+[20:11:21] [INFO] Trade opened and saved {"trade_id": 384}
+[20:11:21] [INFO] Processing command {"id": 19, "symbol": "ETHUSDT", "side": "open"}
+[20:11:23] [INFO] Trade opened and saved {"trade_id": 385}
+[20:11:23] [INFO] Processing command {"id": 20, "symbol": "ETHUSDT", "side": "open"}
+[20:11:25] [INFO] Trade opened and saved {"trade_id": 386}
+[20:11:25] [INFO] Processing command {"id": 21, "symbol": "ETHUSDT", "side": "open"}
+[20:11:26] [INFO] Trade opened and saved {"trade_id": 387}
+[20:11:26] [INFO] Processing command {"id": 22, "symbol": "ETHUSDT", "side": "open"}
+[20:11:28] [INFO] Processing command {"id": 23, "symbol": "ETHUSDT", "side": "open"}
+[20:11:30] [INFO] Trade opened and saved {"trade_id": 388}
+[20:11:30] [INFO] Processing command {"id": 24, "symbol": "ETHUSDT", "side": "open"}
+[20:11:33] [INFO] Trade opened and saved {"trade_id": 389}
+[20:11:35] [DEBUG] Загружено ордеров: 5 {"symbol": "all"}
